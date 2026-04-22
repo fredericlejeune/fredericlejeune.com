@@ -1,17 +1,156 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ReviewCard from '../components/ReviewCard.astro';
+import site from '../data/site.json';
+import services from '../data/services.json';
+import reviews from '../data/reviews.json';
 
+const homepageServices = services.slice(0, 6);
+const homepageReviews = reviews.slice(0, 3);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-navy-deep via-navy to-navy-mid min-h-[600px] grid grid-cols-1 lg:grid-cols-[1fr_420px] relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(126,205,200,0.08),transparent_60%)]"></div>
+
+    <div class="px-8 lg:px-16 py-20 flex flex-col justify-center z-10">
+      <p class="text-teal text-[10px] font-bold tracking-[3px] uppercase mb-5">
+        Hypnothérapeute · Tarnos · Bayonne · Biarritz
+      </p>
+      <h1 class="text-white text-5xl lg:text-6xl font-black leading-[1.05] mb-5">
+        Un changement<br />durable<br /><span class="text-teal">commence ici.</span>
+      </h1>
+      <p class="text-white/60 text-sm font-light leading-relaxed mb-8 max-w-md">
+        Anxiété, phobies, tabac, confiance en soi, douleurs chroniques — une approche sur-mesure, éthique et orientée résultats.
+      </p>
+      <div class="flex flex-wrap gap-4 items-center mb-10">
+        <a
+          href="/rendez-vous"
+          class="bg-teal text-navy-deep font-extrabold text-[11px] uppercase tracking-widest px-7 py-4 rounded-full hover:bg-teal/90 transition-colors"
+        >
+          Prendre rendez-vous
+        </a>
+        <a href="#comment" class="text-white/70 text-xs font-semibold flex items-center gap-3 hover:text-white transition-colors">
+          <span class="w-8 h-8 border border-white/30 rounded-full flex items-center justify-center text-[10px]">▶</span>
+          Comment ça marche
+        </a>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-yellow-400 tracking-wide">★★★★★</span>
+        <span class="text-white/50 text-[11px] font-light">
+          <strong class="text-white font-bold">{site.google.rating}/5</strong> · {site.google.reviewCount} avis vérifiés · Google
+        </span>
+      </div>
+    </div>
+
+    <div class="hidden lg:flex items-end justify-center bg-gradient-to-b from-navy-mid to-navy-deep relative">
+      <img
+        src="/images/frederic-lejeune-hypnotherapeute.jpg"
+        alt="Frédéric Lejeune hypnothérapeute à Tarnos"
+        class="w-72 object-cover object-top rounded-t-full"
+        loading="eager"
+        width="288"
+        height="460"
+      />
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-20 px-8 lg:px-16 bg-white">
+    <p class="text-teal text-[10px] font-bold tracking-[3px] uppercase mb-3">Ce que je traite</p>
+    <h2 class="text-navy-deep text-3xl font-black mb-12">Vous souffrez de…</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {homepageServices.map(s => (
+        <ServiceCard number={s.number} title={s.title} desc={s.shortDesc} slug={s.slug} />
+      ))}
+    </div>
+  </section>
+
+  <!-- CHIFFRES CLÉS -->
+  <section id="comment" class="py-20 px-8 lg:px-16 bg-light-bg">
+    <p class="text-teal text-[10px] font-bold tracking-[3px] uppercase mb-3">Pourquoi l'hypnose</p>
+    <h2 class="text-navy-deep text-3xl font-black mb-12">Des résultats là où les autres approches échouent</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {[
+        { number: '3–5', label: 'Séances en moyenne', desc: 'Là où d\'autres thérapies prennent des mois ou des années' },
+        { number: '4,9★', label: 'Note moyenne', desc: `Sur ${site.google.reviewCount} avis vérifiés Google — la satisfaction avant tout` },
+        { number: '100%', label: 'Sur-mesure', desc: 'Chaque séance est conçue pour vous, pas pour un protocole standard' },
+      ].map(item => (
+        <div class="bg-white rounded-xl p-8 text-center shadow-sm">
+          <p class="text-teal text-4xl font-black mb-2">{item.number}</p>
+          <p class="text-navy-deep text-sm font-bold mb-2">{item.label}</p>
+          <p class="text-muted text-[11px] font-light leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section class="bg-gradient-to-br from-navy-deep to-navy py-20 px-8 lg:px-16">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="bg-navy-mid rounded-2xl h-72 flex items-center justify-center overflow-hidden">
+        <img
+          src="/images/frederic-lejeune-cabinet.jpg"
+          alt="Frédéric Lejeune hypnothérapeute cabinet Tarnos"
+          class="w-full h-full object-cover rounded-2xl"
+          loading="lazy"
+          width="500"
+          height="288"
+        />
+      </div>
+      <div>
+        <p class="text-teal text-[10px] font-bold tracking-[3px] uppercase mb-3">Qui suis-je ?</p>
+        <h2 class="text-white text-2xl font-black leading-tight mb-5">
+          Frédéric Lejeune,<br />hypnothérapeute<br />à Tarnos
+        </h2>
+        <p class="text-white/60 text-xs font-light leading-loose mb-6">
+          Formé à plusieurs approches complémentaires — hypnose ericksonienne, hypnose flash intégrative®, hypnose clinique — j'accompagne mes patients avec une approche éthique, précise et profondément humaine. Mon objectif : vous donner des outils durables, pas créer une dépendance.
+        </p>
+        <a
+          href="/a-propos"
+          class="border border-teal text-teal font-bold text-[11px] uppercase tracking-widest px-6 py-3 rounded-full hover:bg-teal hover:text-navy-deep transition-all inline-block"
+        >
+          En savoir plus →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS -->
+  <section class="py-20 px-8 lg:px-16 bg-white text-center">
+    <p class="text-teal text-[10px] font-bold tracking-[3px] uppercase mb-3">Témoignages</p>
+    <h2 class="text-navy-deep text-3xl font-black mb-10">Ils ont franchi le pas</h2>
+    <div class="flex items-center justify-center gap-6 mb-10">
+      <span class="text-navy-deep text-6xl font-black leading-none">{site.google.rating}</span>
+      <div class="text-left">
+        <p class="text-yellow-400 text-xl mb-1">★★★★★</p>
+        <p class="text-muted text-xs">{site.google.reviewCount} avis · Google</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+      {homepageReviews.map(r => (
+        <ReviewCard author={r.author} location={r.location} text={r.text} rating={r.rating} />
+      ))}
+    </div>
+    <a href="/avis" class="inline-block mt-8 text-teal text-[11px] font-bold uppercase tracking-widest hover:underline">
+      Voir tous les témoignages →
+    </a>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="bg-teal py-20 px-8 lg:px-16 text-center">
+    <h2 class="text-navy-deep text-4xl font-black mb-3">Rendez-vous découverte</h2>
+    <p class="text-navy-deep/60 text-sm font-light mb-8">L'hypnose est-elle faite pour vous ?</p>
+    <a
+      href="/rendez-vous"
+      class="bg-navy-deep text-white font-extrabold text-sm uppercase tracking-widest px-10 py-5 rounded-full hover:bg-navy transition-colors inline-block"
+    >
+      Réserver ma séance
+    </a>
+    <p class="text-navy-deep/40 text-[10px] mt-5 tracking-widest uppercase">
+      📍 {site.address.street} · {site.address.city} · {site.phoneDisplay}
+    </p>
+  </section>
+</BaseLayout>
