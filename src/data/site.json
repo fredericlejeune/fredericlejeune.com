@@ -1,0 +1,29 @@
+{
+  "name": "Frédéric Lejeune",
+  "title": "Frédéric Lejeune – Hypnothérapeute à Tarnos, Bayonne & Biarritz",
+  "description": "Hypnothérapeute à Tarnos, Bayonne & Biarritz. Séances personnalisées pour arrêter de fumer, gérer l'anxiété, les phobies ou les douleurs. Approche éthique. Prenez RDV en ligne.",
+  "url": "https://fredericlejeune.com",
+  "phone": "+33769877773",
+  "phoneDisplay": "+33 7 69 87 77 73",
+  "email": "lejeune.hypnose@gmail.com",
+  "address": {
+    "street": "24 Boulevard Jacques Duclos",
+    "city": "Tarnos",
+    "postalCode": "40220",
+    "country": "FR"
+  },
+  "geo": {
+    "latitude": 43.5268,
+    "longitude": -1.4587
+  },
+  "calendly": "https://calendly.com/lejeune-hypnose-1",
+  "google": {
+    "rating": 4.9,
+    "reviewCount": 140
+  },
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "linkedin": ""
+  }
+}

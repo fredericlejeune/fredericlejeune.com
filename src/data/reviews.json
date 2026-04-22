@@ -1,0 +1,44 @@
+[
+  {
+    "author": "Marie L.",
+    "location": "Bayonne",
+    "rating": 5,
+    "service": "arret-tabac",
+    "text": "J'ai arrêté de fumer en une seule séance après 15 ans. Je n'y croyais pas vraiment avant, mais le résultat est là. Merci infiniment."
+  },
+  {
+    "author": "Thomas R.",
+    "location": "Tarnos",
+    "rating": 5,
+    "service": "phobies",
+    "text": "Ma phobie des araignées a complètement disparu en 3 séances. Frédéric est à l'écoute, professionnel et bienveillant."
+  },
+  {
+    "author": "Sophie M.",
+    "location": "Biarritz",
+    "rating": 5,
+    "service": "insomnie",
+    "text": "Je dormais très mal depuis des années. Après 4 séances, je retrouve enfin un sommeil profond et réparateur. Merci."
+  },
+  {
+    "author": "Laurent D.",
+    "location": "Bayonne",
+    "rating": 5,
+    "service": "anxiete",
+    "text": "Les crises d'anxiété qui me paralysaient au travail ont disparu. Je me sens enfin serein et capable de faire face."
+  },
+  {
+    "author": "Isabelle C.",
+    "location": "Anglet",
+    "rating": 5,
+    "service": "confiance",
+    "text": "Prendre la parole en public me terrorisait. Aujourd'hui je le fais naturellement. Un travail en profondeur, des résultats concrets."
+  },
+  {
+    "author": "Marc B.",
+    "location": "Tarnos",
+    "rating": 5,
+    "service": "douleurs",
+    "text": "Souffrant de douleurs chroniques depuis 3 ans, l'hypnose a changé ma vie. La douleur est toujours là mais je la vis autrement."
+  }
+]
