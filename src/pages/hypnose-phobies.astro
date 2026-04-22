@@ -3,20 +3,20 @@ import ServiceLayout from '../layouts/ServiceLayout.astro';
 
 const faq = [
   {
-    question: "Toutes les phobies peuvent-elles être traitées par hypnose ?",
-    answer: "La grande majorité des phobies spécifiques (animaux, hauteurs, avion, sang, dentiste, espaces clos) répondent très bien à l'hypnose. Les phobies complexes liées à des traumatismes profonds peuvent nécessiter un accompagnement plus long ou une approche combinée."
+    question: "L'hypnose peut-elle guérir n'importe quelle phobie ?",
+    answer: "La grande majorité des phobies simples (araignées, avion, hauteurs, dentiste, sang...) répondent très bien à l'hypnose. Les phobies complexes liées à des traumatismes profonds peuvent nécessiter un travail plus long ou une approche combinée."
   },
   {
-    question: "Vais-je être forcé d'affronter mon objet de peur ?",
-    answer: "Non. L'approche hypnotique travaille sur la réponse émotionnelle à la peur, pas en vous confrontant brutalement à l'objet phobogène. Vous restez dans un espace sécurisé tout au long de la séance. La désensibilisation se fait progressivement et en douceur."
+    question: "Devrai-je être confronté à ce qui me fait peur pendant la séance ?",
+    answer: "Non. L'hypnose travaille sur la représentation mentale de la phobie, pas sur l'exposition réelle. Il n'y a pas d'araignée dans le cabinet, pas de simulation de vol. Le travail se fait entièrement à travers l'imaginaire."
   },
   {
-    question: "Combien de temps faut-il pour se débarrasser d'une phobie ?",
-    answer: "Les phobies spécifiques sont parmi les problématiques qui répondent le plus rapidement à l'hypnose : souvent 2 à 3 séances suffisent. Des résultats notables sont fréquemment observés dès la première séance."
+    question: "Combien de séances pour une phobie ?",
+    answer: "La plupart des phobies simples se traitent en 2 à 4 séances. Les résultats sont souvent spectaculaires et rapides."
   },
   {
-    question: "Quels types de phobies traitez-vous le plus souvent ?",
-    answer: "Phobie des araignées, des serpents, du sang, des injections, de l'avion, des espaces clos (claustrophobie), des hauteurs (acrophobie), du dentiste, des chiens, et la peur de vomir (émétophobie). Chaque phobie a son protocole adapté."
+    question: "Est-ce que les résultats durent ?",
+    answer: "Oui. Le travail d'hypnose modifie le schéma de traitement de la peur au niveau inconscient. Les résultats sont généralement durables, sauf en cas de nouveau choc émotionnel majeur lié à la phobie."
   }
 ];
 ---
@@ -24,26 +24,31 @@ const faq = [
 <ServiceLayout
   title="Hypnose contre les Phobies – Bayonne, Tarnos | Frédéric Lejeune"
   description="Phobies des araignées, de l'avion, du vide, du dentiste… L'hypnose désensibilise rapidement et durablement. Hypnothérapeute à Tarnos, Bayonne, Biarritz."
-  h1="Hypnose contre les phobies — Tarnos, Bayonne, Biarritz"
-  subtitle="Araignées, avion, hauteurs, dentiste… Une phobie n'est pas une faiblesse. C'est une réponse apprise. Et ce qui s'apprend peut se désapprendre."
+  h1="Hypnose pour les phobies — Bayonne, Tarnos, Biarritz"
+  subtitle="Une phobie n'est pas irrationnelle : c'est une réaction d'alarme que votre inconscient a programmée un jour, et qui s'est emballée. L'hypnose peut l'effacer."
   faq={faq}
 >
-  <h2>La phobie : une peur conditionnée, pas une fatalité</h2>
-  <p>Une phobie est une réponse de peur excessive, automatique et incontrôlable face à un objet ou une situation précise. Elle est souvent le résultat d'un conditionnement : un événement passé (parfois oublié consciemment) a associé cet objet à une menace, et cette association s'est gravée dans l'inconscient. Dès lors, chaque confrontation — même imaginée — déclenche la même réponse de panique.</p>
-  <p>Ce qui rend la phobie si résistante à la raison, c'est précisément que l'association est inconsciente. Vous savez que l'araignée n'est pas dangereuse. Votre corps, lui, ne l'a pas encore appris. L'hypnose travaille là où la logique ne peut pas atteindre : elle modifie l'association émotionnelle à l'origine de la peur, permettant au système nerveux d'apprendre une nouvelle réponse.</p>
-
-  <h2>Ce qui se passe en séance</h2>
-  <p>Après un entretien initial pour comprendre l'histoire et les manifestations de la phobie, nous utilisons en état hypnotique des protocoles de désensibilisation progressive. Vous n'êtes jamais confronté brutalement à votre objet de peur : le travail se fait par l'imaginaire et la mémoire, dans un cadre sécurisé et contrôlé. Des techniques proches de l'EMDR peuvent être intégrées pour accélérer le traitement des souvenirs émotionnels liés à la phobie.</p>
-  <p>L'objectif n'est pas d'aimer les araignées — c'est d'en avoir une réaction proportionnée, sans que votre corps parte en panique. Être libéré d'une phobie change profondément la qualité de vie au quotidien.</p>
-
-  <h2>Combien de séances ?</h2>
-  <p>Les phobies spécifiques sont parmi les indications les plus rapides à traiter : <strong>2 à 3 séances</strong> suffisent dans la plupart des cas. Des résultats notables sont souvent observés dès la première séance. Les phobies plus anciennes ou liées à des traumatismes complexes peuvent nécessiter un accompagnement légèrement plus long.</p>
-
-  <h2>Questions fréquentes</h2>
-  {faq.map(item => (
+  <div class="space-y-8 text-muted font-light leading-relaxed text-sm">
     <div>
-      <h3>{item.question}</h3>
-      <p>{item.answer}</p>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Comment l'hypnose traite les phobies</h2>
+      <p>Une phobie est une réponse de peur disproportionnée, automatique et inconsciente. Elle a été "enregistrée" à un moment de votre vie — parfois sans souvenir conscient de l'événement. L'hypnose permet d'accéder à cette mémoire, de la retraiter et de désactiver la réponse automatique de panique.</p>
     </div>
-  ))}
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Ce qui se passe en séance</h2>
+      <p>Pas besoin de vous confronter à votre peur. En état hypnotique, nous travaillons sur la représentation mentale — la façon dont votre cerveau traite l'objet phobique. Nous reprogrammons cette réponse pour qu'elle redevienne neutre ou proportionnée.</p>
+    </div>
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Combien de séances ?</h2>
+      <p>La plupart des phobies simples se traitent en <strong class="text-navy-deep font-bold">2 à 4 séances</strong>. Certains patients constatent une amélioration significative dès la première séance.</p>
+    </div>
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-6">Questions fréquentes</h2>
+      {faq.map(item => (
+        <div class="mb-6">
+          <h3 class="text-navy-deep font-bold text-base mb-2">{item.question}</h3>
+          <p>{item.answer}</p>
+        </div>
+      ))}
+    </div>
+  </div>
 </ServiceLayout>

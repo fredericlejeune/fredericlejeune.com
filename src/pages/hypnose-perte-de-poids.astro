@@ -3,20 +3,20 @@ import ServiceLayout from '../layouts/ServiceLayout.astro';
 
 const faq = [
   {
-    question: "L'hypnose pour maigrir est-elle une solution miracle ?",
-    answer: "Non. L'hypnose n'est pas une baguette magique. Elle agit sur les comportements alimentaires et la relation à la nourriture, pas directement sur le métabolisme. Les résultats sont durables parce qu'ils viennent d'un changement profond, pas d'une restriction imposée de l'extérieur."
+    question: "L'hypnose peut-elle me faire maigrir sans régime ?",
+    answer: "L'hypnose ne fait pas maigrir directement. Elle modifie votre relation à la nourriture, vos comportements alimentaires et votre rapport à votre corps, ce qui entraîne naturellement une perte de poids. Pas de régime frustrant, mais un changement de mode de vie profond et durable."
   },
   {
-    question: "Combien de séances sont nécessaires ?",
-    answer: "En général, un accompagnement de 4 à 6 séances est recommandé pour traiter les différentes dimensions du rapport à la nourriture (grignotages, émotions, image corporelle). Un suivi espacé peut être proposé pour consolider les acquis sur la durée."
+    question: "Combien de kilos peut-on perdre avec l'hypnose ?",
+    answer: "Ce n'est pas la bonne question. L'objectif est d'atteindre votre poids naturel — le poids auquel votre corps se stabilise quand vous mangez de façon intuitive et saine. Cela peut représenter de 5 à 30 kg ou plus selon les cas."
   },
   {
-    question: "Vais-je devoir suivre un régime en parallèle ?",
-    answer: "Non. L'approche hypnotique ne repose pas sur la restriction. Nous travaillons sur votre écoute des signaux de faim et de satiété, sur les comportements alimentaires émotionnels, et sur le plaisir de manger. Vous apprenez à manger mieux, pas moins."
+    question: "Combien de séances faut-il ?",
+    answer: "Un accompagnement complet sur la perte de poids dure généralement 6 à 10 séances, avec un suivi espacé dans le temps. C'est un travail en profondeur, pas un traitement coup de poing."
   },
   {
-    question: "Puis-je combiner l'hypnose avec une activité sportive ou un suivi nutritionnel ?",
-    answer: "Absolument, et c'est même recommandé. L'hypnose complète parfaitement un suivi diététique ou une pratique sportive. Elle travaille sur la dimension psychologique et comportementale que ces approches n'atteignent pas."
+    question: "L'hypnose fonctionne-t-elle pour les compulsions alimentaires ?",
+    answer: "Oui. Les compulsions alimentaires répondent souvent très bien à l'hypnose car elles sont liées à des mécanismes émotionnels inconscients — manger pour compenser, se récompenser, se consoler. L'hypnose travaille directement sur ces mécanismes."
   }
 ];
 ---
@@ -25,25 +25,30 @@ const faq = [
   title="Hypnose Perte de Poids – Tarnos, Bayonne | Frédéric Lejeune"
   description="Perdez du poids durablement sans régime frustrant. L'hypnose modifie vos comportements alimentaires à la source. Hypnothérapeute à Tarnos, Bayonne, Biarritz."
   h1="Hypnose pour la perte de poids — Tarnos, Bayonne, Biarritz"
-  subtitle="Vous avez essayé les régimes. Vous perdez, vous reprenez. Le problème n'est pas votre volonté — c'est votre relation inconsciente à la nourriture."
+  subtitle="Les régimes échouent parce qu'ils s'attaquent au symptôme, pas à la cause. L'hypnose change votre rapport à la nourriture à la racine — sans frustration, sans interdit."
   faq={faq}
 >
-  <h2>Pourquoi les régimes ne marchent pas durablement</h2>
-  <p>La plupart des régimes reposent sur la restriction consciente : compter les calories, s'interdire certains aliments, résister à l'envie. Cette approche ignore que nos comportements alimentaires sont largement déterminés par l'inconscient : les émotions, les habitudes, les associations entre nourriture et réconfort, les croyances sur notre corps et notre valeur. Résister à la nourriture avec la volonté, c'est nager à contre-courant de l'inconscient — épuisant et voué à l'échec à long terme.</p>
-  <p>L'alimentation émotionnelle est au cœur du problème pour beaucoup de personnes : on mange quand on s'ennuie, quand on est stressé, quand on se sent seul, quand on cherche du réconfort. Ces comportements ne sont pas des caprices — ce sont des stratégies que l'inconscient a développées pour gérer des émotions difficiles. L'hypnose permet d'identifier ces mécanismes et d'en créer de nouveaux, plus adaptés et moins coûteux pour le corps.</p>
-
-  <h2>Ce qui se passe en séance</h2>
-  <p>Le travail hypnotique sur la perte de poids aborde plusieurs dimensions : la reconnexion aux signaux naturels de faim et de satiété (souvent désensibilisés par des années de régimes), la modification des associations entre émotions et nourriture, le renforcement de l'image corporelle positive, et la création de nouveaux comportements alimentaires automatiques. Vous n'êtes pas en train de résister à la nourriture — vous êtes en train de changer le rapport que vous entretenez avec elle.</p>
-  <p>Des techniques d'auto-hypnose vous sont enseignées pour gérer les envies compulsives au quotidien, notamment dans les moments de stress ou d'ennui qui déclenchent le plus souvent les comportements alimentaires émotionnels.</p>
-
-  <h2>Combien de séances ?</h2>
-  <p>Un accompagnement de <strong>4 à 6 séances</strong> est généralement recommandé pour traiter les différentes dimensions du rapport à la nourriture. L'espacement entre les séances permet au cerveau d'intégrer les changements et d'observer les effets dans le quotidien alimentaire. Un suivi à long terme peut être proposé pour consolider les acquis.</p>
-
-  <h2>Questions fréquentes</h2>
-  {faq.map(item => (
+  <div class="space-y-8 text-muted font-light leading-relaxed text-sm">
     <div>
-      <h3>{item.question}</h3>
-      <p>{item.answer}</p>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Pourquoi les régimes seuls ne suffisent pas</h2>
+      <p>Nous ne mangeons pas seulement par faim. Nous mangeons pour combler une anxiété, nous récompenser, nous consoler, occuper le vide. Ces comportements sont pilotés par l'inconscient. Tant qu'on ne les change pas à ce niveau, les régimes ne font que créer de la frustration et de la culpabilité.</p>
     </div>
-  ))}
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Ce qui se passe en séance</h2>
+      <p>Nous identifions d'abord les mécanismes émotionnels qui gouvernent votre rapport à la nourriture. En état hypnotique, nous reprogrammons ces mécanismes : satiété naturelle, plaisir de bien manger, relation apaisée avec le corps. L'objectif est que ces changements deviennent automatiques — pas un effort de volonté quotidien.</p>
+    </div>
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Combien de séances ?</h2>
+      <p>Un accompagnement perte de poids dure généralement <strong class="text-navy-deep font-bold">6 à 10 séances</strong>, avec des rendez-vous de suivi espacés dans le temps pour consolider les changements.</p>
+    </div>
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-6">Questions fréquentes</h2>
+      {faq.map(item => (
+        <div class="mb-6">
+          <h3 class="text-navy-deep font-bold text-base mb-2">{item.question}</h3>
+          <p>{item.answer}</p>
+        </div>
+      ))}
+    </div>
+  </div>
 </ServiceLayout>

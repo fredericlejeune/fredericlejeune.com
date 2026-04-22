@@ -3,20 +3,20 @@ import ServiceLayout from '../layouts/ServiceLayout.astro';
 
 const faq = [
   {
-    question: "L'hypnose pour les problèmes de peau est-elle reconnue en dermatologie ?",
-    answer: "Oui. La psychodermatologie est une spécialité médicale à part entière qui étudie les liens entre la peau, le système nerveux et l'état psychologique. L'hypnose est une des approches validées dans ce cadre, avec des études cliniques publiées sur le psoriasis, l'eczéma atopique et les dermatites. Certains dermatologues recommandent eux-mêmes ce type d'accompagnement complémentaire."
+    question: "Est-ce que l'hypnose guérit vraiment le psoriasis ou l'eczéma ?",
+    answer: "L'hypnose ne guérit pas une maladie dermatologique au sens médical. Mais dans les cas où le stress, les émotions ou des conflits psychiques jouent un rôle dans les poussées, l'hypnose peut réduire significativement leur fréquence et leur intensité. Certains patients voient leurs symptômes disparaître presque totalement."
   },
   {
-    question: "L'hypnose peut-elle aider pour le psoriasis et l'eczéma ?",
-    answer: "Oui, en particulier pour les formes dont les poussées sont étroitement liées au stress. L'hypnose agit sur le système nerveux autonome et peut réduire la réponse inflammatoire liée au stress. Des études ont montré une réduction de la fréquence et de l'intensité des poussées chez des patients pratiquant l'hypnose régulièrement."
+    question: "Comment savoir si mes problèmes de peau ont une cause psychologique ?",
+    answer: "Plusieurs indices : les poussées surviennent dans des périodes de stress ou de conflit émotionnel, elles s'améliorent en vacances ou en période sereine, elles ont démarré après un choc ou un changement de vie. Si vous cochez ces cases, l'hypnose peut être particulièrement indiquée."
   },
   {
-    question: "Combien de séances sont nécessaires ?",
-    answer: "Comptez généralement 4 à 6 séances pour un effet significatif sur les problèmes de peau d'origine psychosomatique. Les résultats dépendent de la pathologie, de son ancienneté et de la dimension émotionnelle impliquée. Des techniques d'auto-hypnose sont enseignées pour gérer les poussées au quotidien."
+    question: "Combien de séances pour les problèmes de peau ?",
+    answer: "Un accompagnement complet dure généralement 6 à 10 séances. Les résultats varient selon la nature du trouble et sa dimension psychosomatique."
   },
   {
-    question: "Dois-je arrêter mes traitements dermatologiques ?",
-    answer: "Non. L'hypnose est complémentaire aux traitements dermatologiques, pas un substitut. Continuez vos traitements prescrits. L'objectif est que le travail sur la dimension émotionnelle améliore l'efficacité de vos traitements et réduise la fréquence des poussées."
+    question: "Faut-il arrêter mon traitement dermatologique ?",
+    answer: "Non. Continuez votre traitement médical en parallèle. L'hypnose est complémentaire, pas substituante. Informez votre dermatologue de la démarche."
   }
 ];
 ---
@@ -25,25 +25,30 @@ const faq = [
   title="Hypnose Problèmes de Peau – Tarnos, Bayonne | Frédéric Lejeune"
   description="Psoriasis, eczéma, dermatite… Quand la peau exprime ce que les mots ne disent pas. L'hypnose traite la dimension émotionnelle des troubles cutanés."
   h1="Hypnose pour les problèmes de peau — Tarnos, Bayonne, Biarritz"
-  subtitle="Psoriasis, eczéma, démangeaisons… La peau parle souvent de ce que les mots taisent. L'hypnose traite la dimension émotionnelle que les crèmes n'atteignent pas."
+  subtitle="La peau est souvent le miroir de nos émotions. Psoriasis, eczéma, démangeaisons — quand la médecine classique n'explique pas tout, l'hypnose explore la dimension émotionnelle."
   faq={faq}
 >
-  <h2>Quand la peau exprime ce que les mots ne disent pas</h2>
-  <p>La peau est l'organe le plus visible du corps — et l'un des plus sensibles aux états émotionnels. Ce lien n'est pas métaphorique : il est neurobiologique. La peau et le cerveau partagent la même origine embryonnaire (l'ectoderme) et communiquent en permanence via le système nerveux, le système immunitaire et les hormones du stress. L'axe peau-cerveau-stress est aujourd'hui bien documenté en psychodermatologie.</p>
-  <p>Le stress chronique déclenche une cascade inflammatoire qui peut aggraver, voire déclencher, de nombreuses affections cutanées : psoriasis, eczéma atopique, dermatite séborrhéique, urticaire chronique, acné. Pour de nombreuses personnes, les poussées surviennent systématiquement en période de tension émotionnelle — preuve que la dimension psychologique est indissociable de la dimension dermatologique. Les crèmes et traitements médicamenteux traitent l'inflammation visible ; ils n'atteignent pas la source émotionnelle qui la génère.</p>
-
-  <h2>Ce qui se passe en séance</h2>
-  <p>Le travail hypnotique sur les problèmes de peau comporte plusieurs dimensions. Nous explorons d'abord la corrélation entre les poussées et les événements émotionnels ou stressants — souvent révélatrice. En état hypnotique, nous travaillons sur la régulation du système nerveux autonome (réduction de la réponse de stress chronique), sur le dialogue inconscient avec la peau (que cherche-t-elle à exprimer ?), et sur les émotions sous-jacentes non traitées qui se manifestent via la peau.</p>
-  <p>Des visualisations thérapeutiques ciblées sur la peau sont utilisées — une approche qui a montré son efficacité dans plusieurs études cliniques sur le psoriasis. Des techniques d'auto-hypnose pour gérer le stress et les démangeaisons au quotidien sont également enseignées.</p>
-
-  <h2>Combien de séances ?</h2>
-  <p>Un accompagnement de <strong>4 à 6 séances</strong> permet généralement d'observer une amélioration notable : réduction de la fréquence et de l'intensité des poussées, meilleure gestion du stress déclencheur, diminution des démangeaisons liées à l'anxiété. L'approche est complémentaire et non substitutive au suivi dermatologique.</p>
-
-  <h2>Questions fréquentes</h2>
-  {faq.map(item => (
+  <div class="space-y-8 text-muted font-light leading-relaxed text-sm">
     <div>
-      <h3>{item.question}</h3>
-      <p>{item.answer}</p>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">La peau et les émotions</h2>
+      <p>La peau et le système nerveux partagent la même origine embryologique. Ce n'est pas un hasard si nos émotions s'expriment parfois à travers elle : on rougit, on a "la chair de poule", on transpire. Chez certaines personnes, cette connexion psychosomatique est plus prononcée, et des conflits émotionnels profonds se manifestent sous forme de pathologies cutanées.</p>
     </div>
-  ))}
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Ce qui se passe en séance</h2>
+      <p>Nous explorons d'abord les circonstances d'apparition du trouble cutané : quand, comment, après quoi. En état hypnotique, nous travaillons sur la dimension émotionnelle et symbolique du trouble — qu'est-ce que la peau exprime ? Quels conflits cherche-t-elle à résoudre ? Ce travail peut transformer profondément le rapport au symptôme.</p>
+    </div>
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Combien de séances ?</h2>
+      <p>Pour les troubles cutanés à composante émotionnelle : <strong class="text-navy-deep font-bold">6 à 10 séances</strong> en général. Le travail est progressif et respecte votre rythme.</p>
+    </div>
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-6">Questions fréquentes</h2>
+      {faq.map(item => (
+        <div class="mb-6">
+          <h3 class="text-navy-deep font-bold text-base mb-2">{item.question}</h3>
+          <p>{item.answer}</p>
+        </div>
+      ))}
+    </div>
+  </div>
 </ServiceLayout>

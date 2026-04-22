@@ -3,20 +3,20 @@ import ServiceLayout from '../layouts/ServiceLayout.astro';
 
 const faq = [
   {
-    question: "L'hypnose peut-elle changer ma personnalité ?",
-    answer: "Non. L'hypnose ne change pas votre personnalité — elle libère votre potentiel réel de celui que les croyances limitantes étouffent. Vous devenez plus vous-même, pas quelqu'un d'autre. Les changements sont ressentis comme naturels et authentiques, pas comme une transformation artificielle."
+    question: "L'hypnose peut-elle vraiment améliorer la confiance en soi ?",
+    answer: "Oui. La confiance en soi est largement déterminée par des croyances inconscientes sur vous-même, souvent installées pendant l'enfance ou l'adolescence. L'hypnose permet de revisiter ces croyances et d'en installer de nouvelles, plus justes et plus supportrices."
   },
   {
-    question: "Combien de séances sont nécessaires pour développer la confiance en soi ?",
-    answer: "La confiance en soi est un travail progressif : comptez généralement 4 à 6 séances pour un changement significatif et durable. Certaines personnes constatent des résultats dès les premières séances, notamment une réduction de la critique intérieure et une plus grande aisance dans des situations auparavant anxiogènes."
+    question: "En combien de séances puis-je constater des résultats ?",
+    answer: "Les premiers changements se ressentent généralement après 2 à 3 séances. Un travail en profondeur sur l'estime de soi demande souvent 4 à 6 séances au total."
   },
   {
-    question: "L'hypnose aide-t-elle pour l'anxiété sociale ?",
-    answer: "Oui. La peur du regard des autres, la timidité excessive, la difficulté à prendre la parole en public sont des indications particulièrement bien traitées par l'hypnose. Nous travaillons sur les croyances inconscientes sur soi et sur les autres, ainsi que sur la régulation du système nerveux face aux situations sociales."
+    question: "L'hypnose fonctionne-t-elle pour la peur du regard des autres (anxiété sociale) ?",
+    answer: "Oui. L'anxiété sociale est une forme de phobie sociale qui répond bien à l'hypnose. Le travail porte sur les croyances sous-jacentes ('je vais être jugé', 'je vais me ridiculiser') et sur la désensibilisation des situations redoutées."
   },
   {
-    question: "Peut-on traiter le syndrome de l'imposteur par hypnose ?",
-    answer: "Oui. Le syndrome de l'imposteur est typiquement une croyance inconsciente profonde ('je ne mérite pas ma place', 'on va découvrir que je suis une fraude') qui contraste avec la réalité objective. L'hypnose est particulièrement efficace pour modifier ces croyances à leur racine et ancrer une nouvelle perception de soi plus juste."
+    question: "Dois-je avoir vécu quelque chose de particulier pour manquer de confiance en moi ?",
+    answer: "Non. Le manque de confiance peut résulter d'une accumulation d'expériences ordinaires : des critiques, des comparaisons, des échecs... sans qu'il y ait eu de traumatisme spécifique."
   }
 ];
 ---
@@ -24,26 +24,31 @@ const faq = [
 <ServiceLayout
   title="Hypnose Confiance en Soi – Bayonne, Tarnos | Frédéric Lejeune"
   description="Manque de confiance, estime de soi fragilisée, peur du regard des autres… L'hypnose travaille sur les croyances limitantes à la racine. Résultats durables."
-  h1="Hypnose pour la confiance en soi — Tarnos, Bayonne, Biarritz"
-  subtitle="Le regard des autres vous paralyse. La petite voix intérieure ne cesse de vous juger. Ces croyances limitantes ont une origine. Elles peuvent être rééduquées."
+  h1="Hypnose pour la confiance en soi — Bayonne, Tarnos, Biarritz"
+  subtitle="Le manque de confiance n'est pas un défaut de personnalité. C'est un ensemble de croyances limitantes installées un jour dans votre inconscient. L'hypnose les déracine."
   faq={faq}
 >
-  <h2>D'où viennent les croyances limitantes ?</h2>
-  <p>Le manque de confiance en soi n'est pas inné. Il est le résultat d'un apprentissage : des expériences d'humiliation ou de rejet dans l'enfance, des messages répétés de parents ou d'enseignants ("tu n'es pas capable", "sois raisonnable"), des échecs mal digérés qui ont été généralisés en une croyance sur soi ("je suis nul"). Ces expériences, stockées dans l'inconscient, créent un filtre à travers lequel vous percevez le monde et vous-même — souvent bien plus sévère que la réalité.</p>
-  <p>La particularité de ces croyances limitantes, c'est qu'elles ont une logique interne : elles vous ont peut-être protégé d'une certaine façon dans le passé. Mais elles continuent à opérer dans le présent, même quand elles ne sont plus adaptées. C'est pourquoi la conviction, l'affirmation positive ou la lecture de livres de développement personnel changent rarement ces croyances en profondeur — elles restent à la surface du conscient sans atteindre l'inconscient où la croyance est ancrée.</p>
-
-  <h2>Ce qui se passe en séance</h2>
-  <p>En état hypnotique, nous allons à la source des croyances limitantes : les expériences fondatrices, les décisions inconscientes prises dans l'enfance. Nous travaillons à les recadrer, à les dissoudre, et à ancrer de nouvelles représentations de vous-même — plus justes, plus bienveillantes, plus habilitantes. L'objectif n'est pas de vous convaincre que vous êtes parfait, mais de vous permettre d'accéder à votre valeur réelle sans le filtre déformant des croyances du passé.</p>
-  <p>Des ressources internes sont également ancrées en hypnose : des états de confiance, de calme, de compétence que vous avez peut-être déjà expérimentés dans d'autres contextes, et que nous rendons accessibles au quotidien.</p>
-
-  <h2>Combien de séances ?</h2>
-  <p>La confiance en soi est un travail qui se construit progressivement. Un accompagnement de <strong>4 à 6 séances</strong> permet généralement d'obtenir des changements significatifs et durables. Les premières séances apportent souvent un soulagement immédiat de la critique intérieure ; les suivantes approfondissent et stabilisent les nouvelles perceptions de soi.</p>
-
-  <h2>Questions fréquentes</h2>
-  {faq.map(item => (
+  <div class="space-y-8 text-muted font-light leading-relaxed text-sm">
     <div>
-      <h3>{item.question}</h3>
-      <p>{item.answer}</p>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Pourquoi manque-t-on de confiance en soi ?</h2>
+      <p>La confiance en soi n'est pas un trait de caractère inné. C'est le résultat d'un ensemble de croyances sur vous-même ("je ne suis pas assez bien", "je vais échouer", "les autres sont meilleurs que moi") qui se sont installées progressivement, souvent dès l'enfance. Ces croyances opèrent en dehors de la conscience et résistent à la logique.</p>
     </div>
-  ))}
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Ce qui se passe en séance</h2>
+      <p>En état hypnotique, nous accédons aux croyances et aux expériences fondatrices du manque de confiance. Nous les retraitons pour en modifier l'impact émotionnel, et nous installons de nouvelles références : des ressources, des souvenirs de réussite, de nouvelles représentations de vous-même.</p>
+    </div>
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Combien de séances ?</h2>
+      <p>Pour un travail de fond sur la confiance en soi : <strong class="text-navy-deep font-bold">4 à 6 séances</strong>. Les premières améliorations (moins de peur du regard des autres, prise de parole plus aisée...) se ressentent souvent dès les 2e ou 3e séances.</p>
+    </div>
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-6">Questions fréquentes</h2>
+      {faq.map(item => (
+        <div class="mb-6">
+          <h3 class="text-navy-deep font-bold text-base mb-2">{item.question}</h3>
+          <p>{item.answer}</p>
+        </div>
+      ))}
+    </div>
+  </div>
 </ServiceLayout>

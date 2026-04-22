@@ -3,20 +3,20 @@ import ServiceLayout from '../layouts/ServiceLayout.astro';
 
 const faq = [
   {
-    question: "L'hypnose fonctionne-t-elle pour tous les types d'anxiété ?",
-    answer: "L'hypnose est efficace sur un large spectre : anxiété généralisée, anxiété sociale, attaques de panique, anxiété de performance. Lors de l'entretien initial, nous évaluons ensemble si l'hypnose est l'approche la plus adaptée à votre situation spécifique."
+    question: "L'hypnose peut-elle vraiment traiter l'anxiété chronique ?",
+    answer: "Oui. L'hypnose agit sur les mécanismes inconscients qui alimentent l'anxiété : les ruminations, les schémas de pensée automatiques, les réactions physiologiques au stress. En accédant directement à ces processus, elle permet des changements durables là où les approches cognitives seules butent."
   },
   {
-    question: "L'hypnose peut-elle remplacer mon traitement médicamenteux ?",
-    answer: "Non. L'hypnose est complémentaire au traitement médical, jamais un substitut. Si vous prenez des anxiolytiques ou des antidépresseurs, continuez-les. Une éventuelle réduction de traitement se fait toujours sous supervision médicale."
+    question: "Combien de séances pour une anxiété sévère ?",
+    answer: "En général 4 à 6 séances pour une anxiété chronique ou sévère. Les premières améliorations se ressentent souvent dès la 2e ou 3e séance. La fréquence est adaptée à votre situation."
   },
   {
-    question: "Combien de séances faut-il prévoir ?",
-    answer: "En général, 3 à 5 séances suffisent pour obtenir des résultats significatifs et durables. La première séance permet d'identifier les mécanismes spécifiques de votre anxiété. Les suivantes approfondissent le travail et ancrent les nouvelles réponses."
+    question: "Y a-t-il des contre-indications ?",
+    answer: "L'hypnose est déconseillée aux personnes souffrant de psychose, d'épilepsie non contrôlée ou de certains troubles dissociatifs. Un entretien préalable permet d'évaluer la situation."
   },
   {
-    question: "Les séances d'hypnose sont-elles prises en charge par la mutuelle ?",
-    answer: "Les séances d'hypnothérapie ne sont pas remboursées par la Sécurité sociale. Certaines mutuelles proposent des prises en charge partielles dans leur forfait bien-être — vérifiez auprès de la vôtre."
+    question: "L'hypnose remplace-t-elle un traitement médical pour l'anxiété ?",
+    answer: "Non. L'hypnose est complémentaire au suivi médical ou psychologique. Si vous prenez un traitement anxiolytique, continuez-le et informez votre médecin de la démarche."
   }
 ];
 ---
@@ -24,26 +24,31 @@ const faq = [
 <ServiceLayout
   title="Hypnose Anxiété & Stress – Bayonne, Tarnos | Frédéric Lejeune"
   description="Gérez votre anxiété et votre stress grâce à l'hypnose à Tarnos et Bayonne. Approche douce, résultats durables. Prenez rendez-vous en ligne."
-  h1="Hypnose contre l'anxiété et le stress — Tarnos, Bayonne, Biarritz"
-  subtitle="L'anxiété vous empêche de dormir, de vous concentrer, d'être pleinement là. Les médicaments masquent le symptôme. L'hypnose s'attaque à la racine."
+  h1="Hypnose pour l'anxiété et le stress — Bayonne, Tarnos, Biarritz"
+  subtitle="L'anxiété n'est pas une faiblesse de caractère. C'est un programme inconscient qui s'est emballé. L'hypnose travaille sur ce programme à la source."
   faq={faq}
 >
-  <h2>Pourquoi l'hypnose agit là où la volonté échoue</h2>
-  <p>L'anxiété n'est pas une faiblesse de caractère. C'est une réponse automatique du système nerveux : votre cerveau a appris à percevoir certaines situations comme menaçantes, et il déclenche une cascade de réactions physiologiques (accélération du cœur, tension musculaire, pensées envahissantes) sans que vous puissiez l'en empêcher consciemment. Cette réponse combat-fuite est utile face à un danger réel — elle devient problématique quand elle s'active sans raison valable.</p>
-  <p>L'hypnose intervient précisément à ce niveau inconscient. En état hypnotique, nous accédons aux schémas qui déclenchent cette réponse anxieuse et nous les rééduquons. Le système nerveux apprend à répondre différemment aux mêmes stimuli. C'est un apprentissage profond, pas un simple masquage des symptômes. Les effets sont durables parce qu'ils s'inscrivent dans le fonctionnement même du cerveau.</p>
-
-  <h2>Ce qui se passe en séance</h2>
-  <p>Chaque séance débute par un entretien pour identifier vos déclencheurs spécifiques : situations, pensées, sensations corporelles. Puis, guidé en état hypnotique, vous découvrez une détente profonde que vous n'aviez peut-être jamais expérimentée. Nous travaillons ensuite sur les associations inconscientes qui entretiennent l'anxiété, et nous ancrons de nouvelles réponses de calme et de sécurité intérieure.</p>
-  <p>Des techniques d'auto-hypnose vous sont également enseignées, pour que vous puissiez gérer vous-même les moments de tension au quotidien. L'autonomie est un objectif central de l'accompagnement.</p>
-
-  <h2>Combien de séances ?</h2>
-  <p>Un accompagnement de <strong>3 à 5 séances</strong> permet généralement d'obtenir des résultats significatifs et durables. La fréquence est adaptée à votre situation : certaines personnes bénéficient d'une séance par semaine, d'autres d'un rythme plus espacé. L'objectif est toujours de vous rendre autonome, pas de créer une dépendance au suivi.</p>
-
-  <h2>Questions fréquentes</h2>
-  {faq.map(item => (
+  <div class="space-y-8 text-muted font-light leading-relaxed text-sm">
     <div>
-      <h3>{item.question}</h3>
-      <p>{item.answer}</p>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Comment l'hypnose traite l'anxiété</h2>
+      <p>L'anxiété est produite par une partie de votre cerveau qui a appris à percevoir des dangers là où il n'y en a pas — ou à amplifier des risques réels. Ce mécanisme est inconscient, automatique, et résistant à la volonté. L'hypnose permet d'accéder à ce niveau de traitement et de recalibler ces réponses.</p>
     </div>
-  ))}
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Ce qui se passe en séance</h2>
+      <p>Après un entretien approfondi sur vos déclencheurs et la nature de votre anxiété, nous entrons en état hypnotique pour travailler sur les schémas sous-jacents : les croyances, les associations automatiques, les réactions physiologiques. Chaque séance vous donne également des outils concrets à utiliser au quotidien.</p>
+    </div>
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Combien de séances ?</h2>
+      <p>Pour une anxiété situationnelle légère : <strong class="text-navy-deep font-bold">2 à 3 séances</strong>. Pour une anxiété chronique ou généralisée : <strong class="text-navy-deep font-bold">4 à 6 séances</strong>. Le rythme est adapté à votre évolution.</p>
+    </div>
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-6">Questions fréquentes</h2>
+      {faq.map(item => (
+        <div class="mb-6">
+          <h3 class="text-navy-deep font-bold text-base mb-2">{item.question}</h3>
+          <p>{item.answer}</p>
+        </div>
+      ))}
+    </div>
+  </div>
 </ServiceLayout>
