@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: *?lightbox=
+
+User-agent: AdsBot-Google-Mobile
+User-agent: AdsBot-Google
+Disallow: /_partials*
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: dotbot
+Crawl-delay: 10
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+Sitemap: https://fredericlejeune.com/sitemap-index.xml
