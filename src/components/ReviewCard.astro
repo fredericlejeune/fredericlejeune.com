@@ -1,0 +1,16 @@
+---
+interface Props {
+  author: string;
+  location: string;
+  text: string;
+  rating?: number;
+}
+const { author, location, text, rating = 5 } = Astro.props;
+const stars = '★'.repeat(rating);
+---
+
+<div class="bg-light-bg rounded-xl p-6 border-t-[3px] border-teal">
+  <p class="text-yellow-400 text-xs mb-3 tracking-wide">{stars}</p>
+  <p class="text-gray-600 text-[11px] font-light leading-relaxed italic mb-4">« {text} »</p>
+  <p class="text-navy-deep text-[10px] font-bold uppercase tracking-widest">— {author}, {location}</p>
+</div>
