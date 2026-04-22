@@ -25,21 +25,29 @@ import site from '../data/site.json';
         height="400"
         loading="eager"
       />
-      <div class="prose prose-headings:font-black prose-headings:text-navy-deep prose-p:text-muted prose-p:font-light prose-p:leading-relaxed">
-        <h2>Une approche intégrative et personnalisée</h2>
-        <p>Formé à plusieurs approches complémentaires de l'hypnose — ericksonienne, flash intégrative®, clinique — Frédéric Lejeune accompagne ses patients avec une méthodologie éthique, précise et profondément humaine.</p>
-        <h2>Formation et certifications</h2>
-        <ul>
-          <li>Hypnose ericksonienne</li>
-          <li>Hypnose flash intégrative® (HFI)</li>
-          <li>Hypnose clinique</li>
-          <li>Recognition intégrative®</li>
-          <li>Flash+®</li>
-        </ul>
-        <h2>Ma philosophie</h2>
-        <p>L'objectif n'est pas de créer une dépendance au thérapeute, mais de vous donner des outils durables pour que vous puissiez avancer seul. Chaque séance est conçue pour vous, pas pour un protocole standard.</p>
-        <h2>Cabinet à Tarnos</h2>
-        <p>Le cabinet est situé au {site.address.street}, Tarnos (40220) — à quelques minutes de Bayonne et Biarritz. Consultations du lundi au vendredi, créneaux le soir disponibles.</p>
+      <div class="space-y-6">
+        <div>
+          <h2 class="text-navy-deep text-2xl font-black mb-3">Une approche intégrative et personnalisée</h2>
+          <p class="text-muted text-sm font-light leading-relaxed">Formé à plusieurs approches complémentaires de l'hypnose — ericksonienne, flash intégrative®, clinique — Frédéric Lejeune accompagne ses patients avec une méthodologie éthique, précise et profondément humaine.</p>
+        </div>
+        <div>
+          <h2 class="text-navy-deep text-xl font-black mb-3">Formation et certifications</h2>
+          <ul class="text-muted text-sm font-light space-y-2">
+            <li class="flex items-start gap-2"><span class="text-teal mt-0.5">→</span> Hypnose ericksonienne</li>
+            <li class="flex items-start gap-2"><span class="text-teal mt-0.5">→</span> Hypnose flash intégrative® (HFI)</li>
+            <li class="flex items-start gap-2"><span class="text-teal mt-0.5">→</span> Hypnose clinique</li>
+            <li class="flex items-start gap-2"><span class="text-teal mt-0.5">→</span> Recognition intégrative®</li>
+            <li class="flex items-start gap-2"><span class="text-teal mt-0.5">→</span> Flash+®</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-navy-deep text-xl font-black mb-3">Ma philosophie</h2>
+          <p class="text-muted text-sm font-light leading-relaxed">L'objectif n'est pas de créer une dépendance au thérapeute, mais de vous donner des outils durables pour que vous puissiez avancer seul. Chaque séance est conçue pour vous, pas pour un protocole standard.</p>
+        </div>
+        <div>
+          <h2 class="text-navy-deep text-xl font-black mb-3">Cabinet à Tarnos</h2>
+          <p class="text-muted text-sm font-light leading-relaxed">Le cabinet est situé au {site.address.street}, Tarnos (40220) — à quelques minutes de Bayonne et Biarritz. Consultations du lundi au vendredi, créneaux le soir disponibles.</p>
+        </div>
       </div>
     </div>
   </section>
