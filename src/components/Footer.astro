@@ -1,0 +1,23 @@
+---
+import site from '../data/site.json';
+---
+
+<footer class="bg-navy-deep py-10 px-6">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <div>
+      <p class="font-black text-white text-sm">
+        Frédéric <span class="text-teal">Lejeune</span> — Hypnothérapeute
+      </p>
+      <p class="text-white/40 text-xs mt-1">{site.address.street} · {site.address.city} · {site.phoneDisplay}</p>
+    </div>
+    <div class="flex gap-6 flex-wrap justify-center">
+      <a href="/mentions-legales" class="text-white/40 hover:text-white/70 text-[10px] font-semibold uppercase tracking-widest transition-colors">Mentions légales</a>
+      <a href="/deontologie" class="text-white/40 hover:text-white/70 text-[10px] font-semibold uppercase tracking-widest transition-colors">Déontologie</a>
+      <a href="/blog" class="text-white/40 hover:text-white/70 text-[10px] font-semibold uppercase tracking-widest transition-colors">Blog</a>
+      <a href="/rendez-vous" class="text-teal hover:text-teal/80 text-[10px] font-bold uppercase tracking-widest transition-colors">Prendre RDV</a>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto mt-6 pt-6 border-t border-white/10 text-center">
+    <p class="text-white/20 text-[10px]">© {new Date().getFullYear()} Frédéric Lejeune. Tous droits réservés.</p>
+  </div>
+</footer>

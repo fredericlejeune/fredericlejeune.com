@@ -1,0 +1,47 @@
+---
+import site from '../data/site.json';
+---
+
+<nav class="sticky top-0 z-50 bg-navy/95 backdrop-blur-sm border-b border-white/5">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="/" class="font-black text-white text-base tracking-wide">
+      Frédéric <span class="text-teal">Lejeune</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="/a-propos" class="text-white/70 hover:text-white text-[11px] font-semibold uppercase tracking-widest transition-colors">À propos</a>
+      <a href="/#services" class="text-white/70 hover:text-white text-[11px] font-semibold uppercase tracking-widest transition-colors">Services</a>
+      <a href="/avis" class="text-white/70 hover:text-white text-[11px] font-semibold uppercase tracking-widest transition-colors">Avis</a>
+      <a href="/blog" class="text-white/70 hover:text-white text-[11px] font-semibold uppercase tracking-widest transition-colors">Blog</a>
+      <a
+        href="/rendez-vous"
+        class="bg-teal text-navy-deep font-extrabold text-[11px] uppercase tracking-widest px-5 py-2.5 rounded-full hover:bg-teal/90 transition-colors"
+      >
+        Prendre RDV →
+      </a>
+    </div>
+    <!-- Mobile menu button -->
+    <button id="menu-btn" class="md:hidden text-white" aria-label="Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-navy-deep border-t border-white/10">
+    <div class="px-6 py-4 flex flex-col gap-4">
+      <a href="/a-propos" class="text-white/70 text-sm font-semibold uppercase tracking-widest">À propos</a>
+      <a href="/#services" class="text-white/70 text-sm font-semibold uppercase tracking-widest">Services</a>
+      <a href="/avis" class="text-white/70 text-sm font-semibold uppercase tracking-widest">Avis</a>
+      <a href="/blog" class="text-white/70 text-sm font-semibold uppercase tracking-widest">Blog</a>
+      <a href="/rendez-vous" class="bg-teal text-navy-deep font-extrabold text-sm uppercase tracking-widest px-5 py-3 rounded-full text-center">
+        Prendre RDV →
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>

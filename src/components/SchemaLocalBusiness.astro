@@ -1,0 +1,38 @@
+---
+import site from '../data/site.json';
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": site.name + " – Hypnothérapeute",
+  "url": site.url,
+  "telephone": site.phone,
+  "email": site.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": site.address.street,
+    "addressLocality": site.address.city,
+    "postalCode": site.address.postalCode,
+    "addressCountry": site.address.country
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": site.geo.latitude,
+    "longitude": site.geo.longitude
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": site.google.rating,
+    "reviewCount": site.google.reviewCount
+  },
+  "priceRange": "€€",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    }
+  ]
+})} />
