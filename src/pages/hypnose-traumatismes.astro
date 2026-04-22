@@ -1,0 +1,49 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const faq = [
+  {
+    question: "Est-il sans danger de revisiter des traumatismes en hypnose ?",
+    answer: "Oui, lorsque l'accompagnement est conduit par un professionnel formé au traitement des traumatismes. L'approche intégrative utilisée permet de traiter les mémoires traumatiques sans exposition brutale. La sécurité et le rythme du client sont toujours prioritaires. Si une situation nécessite un suivi psychiatrique ou psychologique parallèle, cela sera discuté ouvertement."
+  },
+  {
+    question: "Vais-je devoir revivre le traumatisme ?",
+    answer: "Non. C'est l'un des avantages majeurs de certaines techniques hypnotiques modernes comme la Flash Technique ou le travail en dissociation. Vous n'avez pas à revivre l'événement en détail pour que le traitement soit efficace. Ces approches permettent de traiter la charge émotionnelle stockée sans réexposition traumatisante."
+  },
+  {
+    question: "L'hypnose peut-elle aider pour les traumatismes d'enfance ?",
+    answer: "Oui. Les traumatismes d'enfance (négligence, maltraitance, abandon, humiliation) sont souvent préverbaux ou fragmentaires en mémoire, ce qui les rend difficiles à traiter par la parole seule. L'hypnose accède à ces mémoires de manière plus directe et permet de les intégrer sans nécessairement les conscientiser dans tous leurs détails."
+  },
+  {
+    question: "Combien de séances faut-il pour traiter un traumatisme ?",
+    answer: "Cela varie considérablement selon la nature et l'ancienneté du traumatisme. Un traumatisme unique et récent peut répondre en 3 à 5 séances. Les traumatismes complexes ou cumulatifs (enfance difficile, maltraitance prolongée) nécessitent un accompagnement plus long, souvent en parallèle avec un suivi psychologique."
+  }
+];
+---
+
+<ServiceLayout
+  title="Hypnose Traumatismes – Tarnos, Bayonne | Frédéric Lejeune"
+  description="Chocs émotionnels, traumatismes, PTSD… L'hypnose intégrative accompagne la guérison en douceur. Hypnothérapeute à Tarnos, Bayonne, Biarritz."
+  h1="Hypnose pour les traumatismes — Tarnos, Bayonne, Biarritz"
+  subtitle="Un événement du passé continue de gouverner votre présent. L'hypnose intégrative permet de traiter ces mémoires sans les revivre douloureusement."
+  faq={faq}
+>
+  <h2>Comment un traumatisme reste piégé dans le corps et l'inconscient</h2>
+  <p>Un traumatisme psychologique survient quand une expérience dépasse les capacités de traitement du système nerveux. Au lieu d'être assimilée et archivée comme une mémoire normale, l'expérience reste "figée" dans un état de haute activation émotionnelle et physiologique. Elle n'est pas intégrée — elle est stockée brute, avec toute sa charge émotionnelle et sensorielle. C'est pourquoi les personnes traumatisées peuvent revivre des fragments de l'événement (flashbacks, cauchemars, réactions corporelles) comme si le danger était encore présent, même des années après.</p>
+  <p>Le corps du thérapeute Bessel van der Kolk a popularisé l'idée que le traumatisme "loge dans le corps" — dans la mémoire somatique, dans les réponses automatiques du système nerveux. Cette compréhension est fondamentale : elle explique pourquoi la parole seule ne suffit pas toujours à traiter un traumatisme. L'hypnose, en accédant à ces mémoires corporelles et inconscientes, offre un chemin de traitement que les thérapies purement cognitives n'atteignent pas.</p>
+
+  <h2>Ce qui se passe en séance</h2>
+  <p>Le travail sur les traumatismes requiert un cadre particulièrement sécurisé. Les premières séances sont consacrées à établir un espace de sécurité intérieure et à renforcer les ressources de la personne — avant tout accès au matériel traumatique. Nous utilisons des approches intégratives modernes, notamment la Flash Technique (qui permet de réduire la charge émotionnelle des mémoires traumatiques sans exposition directe à leur contenu) et des protocoles de retraitement dissociatif.</p>
+  <p>L'objectif n'est pas d'effacer les souvenirs — c'est de les intégrer : les faire passer de mémoires actives et envahissantes à des mémoires passées, archivées, qui ne gouvernent plus le présent. L'événement restera dans votre histoire, mais il cessera d'être une blessure ouverte.</p>
+
+  <h2>Combien de séances ?</h2>
+  <p>La durée de l'accompagnement varie selon la nature et la complexité du traumatisme. Un traumatisme unique et récent peut répondre en <strong>3 à 5 séances</strong>. Les traumatismes complexes ou cumulatifs nécessitent un accompagnement plus long. Dans certains cas, un travail en parallèle avec un psychologue ou un psychiatre est recommandé — la collaboration pluridisciplinaire est toujours dans l'intérêt du client.</p>
+
+  <h2>Questions fréquentes</h2>
+  {faq.map(item => (
+    <div>
+      <h3>{item.question}</h3>
+      <p>{item.answer}</p>
+    </div>
+  ))}
+</ServiceLayout>

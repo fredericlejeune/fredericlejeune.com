@@ -1,0 +1,49 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const faq = [
+  {
+    question: "Toutes les phobies peuvent-elles être traitées par hypnose ?",
+    answer: "La grande majorité des phobies spécifiques (animaux, hauteurs, avion, sang, dentiste, espaces clos) répondent très bien à l'hypnose. Les phobies complexes liées à des traumatismes profonds peuvent nécessiter un accompagnement plus long ou une approche combinée."
+  },
+  {
+    question: "Vais-je être forcé d'affronter mon objet de peur ?",
+    answer: "Non. L'approche hypnotique travaille sur la réponse émotionnelle à la peur, pas en vous confrontant brutalement à l'objet phobogène. Vous restez dans un espace sécurisé tout au long de la séance. La désensibilisation se fait progressivement et en douceur."
+  },
+  {
+    question: "Combien de temps faut-il pour se débarrasser d'une phobie ?",
+    answer: "Les phobies spécifiques sont parmi les problématiques qui répondent le plus rapidement à l'hypnose : souvent 2 à 3 séances suffisent. Des résultats notables sont fréquemment observés dès la première séance."
+  },
+  {
+    question: "Quels types de phobies traitez-vous le plus souvent ?",
+    answer: "Phobie des araignées, des serpents, du sang, des injections, de l'avion, des espaces clos (claustrophobie), des hauteurs (acrophobie), du dentiste, des chiens, et la peur de vomir (émétophobie). Chaque phobie a son protocole adapté."
+  }
+];
+---
+
+<ServiceLayout
+  title="Hypnose contre les Phobies – Bayonne, Tarnos | Frédéric Lejeune"
+  description="Phobies des araignées, de l'avion, du vide, du dentiste… L'hypnose désensibilise rapidement et durablement. Hypnothérapeute à Tarnos, Bayonne, Biarritz."
+  h1="Hypnose contre les phobies — Tarnos, Bayonne, Biarritz"
+  subtitle="Araignées, avion, hauteurs, dentiste… Une phobie n'est pas une faiblesse. C'est une réponse apprise. Et ce qui s'apprend peut se désapprendre."
+  faq={faq}
+>
+  <h2>La phobie : une peur conditionnée, pas une fatalité</h2>
+  <p>Une phobie est une réponse de peur excessive, automatique et incontrôlable face à un objet ou une situation précise. Elle est souvent le résultat d'un conditionnement : un événement passé (parfois oublié consciemment) a associé cet objet à une menace, et cette association s'est gravée dans l'inconscient. Dès lors, chaque confrontation — même imaginée — déclenche la même réponse de panique.</p>
+  <p>Ce qui rend la phobie si résistante à la raison, c'est précisément que l'association est inconsciente. Vous savez que l'araignée n'est pas dangereuse. Votre corps, lui, ne l'a pas encore appris. L'hypnose travaille là où la logique ne peut pas atteindre : elle modifie l'association émotionnelle à l'origine de la peur, permettant au système nerveux d'apprendre une nouvelle réponse.</p>
+
+  <h2>Ce qui se passe en séance</h2>
+  <p>Après un entretien initial pour comprendre l'histoire et les manifestations de la phobie, nous utilisons en état hypnotique des protocoles de désensibilisation progressive. Vous n'êtes jamais confronté brutalement à votre objet de peur : le travail se fait par l'imaginaire et la mémoire, dans un cadre sécurisé et contrôlé. Des techniques proches de l'EMDR peuvent être intégrées pour accélérer le traitement des souvenirs émotionnels liés à la phobie.</p>
+  <p>L'objectif n'est pas d'aimer les araignées — c'est d'en avoir une réaction proportionnée, sans que votre corps parte en panique. Être libéré d'une phobie change profondément la qualité de vie au quotidien.</p>
+
+  <h2>Combien de séances ?</h2>
+  <p>Les phobies spécifiques sont parmi les indications les plus rapides à traiter : <strong>2 à 3 séances</strong> suffisent dans la plupart des cas. Des résultats notables sont souvent observés dès la première séance. Les phobies plus anciennes ou liées à des traumatismes complexes peuvent nécessiter un accompagnement légèrement plus long.</p>
+
+  <h2>Questions fréquentes</h2>
+  {faq.map(item => (
+    <div>
+      <h3>{item.question}</h3>
+      <p>{item.answer}</p>
+    </div>
+  ))}
+</ServiceLayout>

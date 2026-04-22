@@ -1,0 +1,49 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const faq = [
+  {
+    question: "L'hypnose est-elle compatible avec mon traitement médical de la douleur ?",
+    answer: "Oui. L'hypnose est une approche complémentaire qui s'intègre parfaitement aux traitements médicaux (antalgiques, anti-inflammatoires, kinésithérapie). Elle n'est pas un substitut au suivi médical. Continuez votre traitement et informez votre médecin de votre démarche hypnothérapeutique."
+  },
+  {
+    question: "Pour quels types de douleurs l'hypnose est-elle efficace ?",
+    answer: "L'hypnose a montré son efficacité sur les douleurs chroniques d'origines variées : fibromyalgie, migraines et céphalées chroniques, lombalgies, douleurs neuropathiques, douleurs post-opératoires, syndrome du côlon irritable, et douleurs liées au cancer. Elle est également utilisée dans les soins douloureux (pansements, soins dentaires)."
+  },
+  {
+    question: "Combien de séances sont nécessaires ?",
+    answer: "La douleur chronique est souvent ancrée depuis des années : comptez généralement 4 à 8 séances pour observer une réduction significative et durable. Des techniques d'auto-hypnose analgésique sont enseignées pour que vous puissiez gérer les crises vous-même."
+  },
+  {
+    question: "L'efficacité de l'hypnose sur la douleur est-elle reconnue médicalement ?",
+    answer: "Oui. L'hypnoanalgésie est l'une des applications les mieux documentées de l'hypnose clinique. De nombreuses études contrôlées ont démontré son efficacité, et elle est utilisée dans des contextes médicaux variés, notamment en anesthésiologie et en soins palliatifs. L'Inserm a reconnu son efficacité dans plusieurs indications douloureuses."
+  }
+];
+---
+
+<ServiceLayout
+  title="Hypnose Douleurs Chroniques – Tarnos, Bayonne | Frédéric Lejeune"
+  description="Douleurs chroniques, fibromyalgie, migraines… L'hypnose réduit la perception de la douleur durablement. Hypnothérapeute à Tarnos, Bayonne, Biarritz."
+  h1="Hypnose pour les douleurs chroniques — Tarnos, Bayonne, Biarritz"
+  subtitle="La douleur chronique épuise. Elle colonise chaque instant. L'hypnose ne supprime pas la douleur — elle change la façon dont votre cerveau la perçoit."
+  faq={faq}
+>
+  <h2>La douleur, une construction du cerveau</h2>
+  <p>La douleur n'est pas simplement un signal envoyé des tissus lésés vers le cerveau. C'est une expérience créée par le cerveau lui-même, en fonction de nombreux paramètres : l'état émotionnel, les croyances, les anticipations, les expériences passées. Dans la douleur chronique, ce mécanisme est dérégulé : le cerveau continue de générer une expérience douloureuse même en l'absence de lésion active, ou de manière disproportionnée par rapport à la cause. C'est ce qu'on appelle la sensibilisation centrale.</p>
+  <p>La théorie du gate control, développée par les neuroscientifiques Melzack et Wall, a démontré que le cerveau peut moduler la transmission des signaux douloureux. L'hypnoanalgésie exploite précisément ce mécanisme : en état hypnotique, les aires cérébrales impliquées dans le traitement de la douleur modifient leur activité, réduisant l'intensité de l'expérience douloureuse. Ces effets sont visibles en IRMf, ce qui confirme que l'hypnose n'est pas simplement une suggestion mais une modification réelle du traitement neurologique de la douleur.</p>
+
+  <h2>Ce qui se passe en séance</h2>
+  <p>Après un entretien sur l'histoire et les caractéristiques de la douleur, nous utilisons en hypnose différentes techniques d'analgésie : gant anesthésique (transférable à d'autres parties du corps), dissociation, métaphores de transformation de la douleur, modification de la perception temporelle. Ces techniques vous sont enseignées sous forme d'auto-hypnose, pour que vous puissiez les utiliser seul lors des crises douloureuses.</p>
+  <p>Le travail aborde également la dimension émotionnelle et psychologique de la douleur chronique : l'anxiété anticipatoire, le catastrophisme, la vigilance hypertonique au corps — des facteurs qui amplifient l'expérience douloureuse et que l'hypnose peut significativement réduire.</p>
+
+  <h2>Combien de séances ?</h2>
+  <p>La douleur chronique nécessite un accompagnement progressif : <strong>4 à 8 séances</strong> permettent généralement d'obtenir une réduction significative et durable de l'intensité douloureuse. Les premières séances établissent les bases de l'analgésie hypnotique ; les suivantes approfondissent et personnalisent les techniques selon l'évolution de la douleur.</p>
+
+  <h2>Questions fréquentes</h2>
+  {faq.map(item => (
+    <div>
+      <h3>{item.question}</h3>
+      <p>{item.answer}</p>
+    </div>
+  ))}
+</ServiceLayout>

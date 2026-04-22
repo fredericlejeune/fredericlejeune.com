@@ -1,0 +1,49 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const faq = [
+  {
+    question: "Peut-on vraiment arrêter de fumer en une seule séance d'hypnose ?",
+    answer: "Oui, c'est possible pour la majorité des fumeurs motivés. La séance travaille sur les automatismes inconscients liés à la cigarette. Une séance de suivi peut être proposée si nécessaire, mais elle n'est pas systématique."
+  },
+  {
+    question: "Faut-il vraiment vouloir arrêter de fumer ?",
+    answer: "Oui. L'hypnose amplifie votre motivation, elle ne la remplace pas. Si vous venez uniquement pour faire plaisir à votre entourage, les résultats seront moindres."
+  },
+  {
+    question: "Est-ce que je risque de reprendre après la séance ?",
+    answer: "L'hypnose travaille en profondeur sur les déclencheurs et les associations inconscientes. La rechute reste possible face à un choc émotionnel majeur — une séance de rappel suffit alors généralement."
+  },
+  {
+    question: "La séance d'hypnose pour arrêter de fumer est-elle remboursée ?",
+    answer: "Les séances d'hypnothérapie ne sont pas remboursées par la Sécurité sociale. Certaines mutuelles prennent en charge une partie des frais — renseignez-vous auprès de la vôtre."
+  }
+];
+---
+
+<ServiceLayout
+  title="Hypnose Arrêt du Tabac – Tarnos, Bayonne | Frédéric Lejeune"
+  description="Arrêtez de fumer en 1 à 2 séances d'hypnose à Tarnos et Bayonne. Approche personnalisée, sans substituts, sans volonté forcée. Prenez RDV en ligne."
+  h1="Hypnose pour arrêter de fumer — Tarnos, Bayonne, Biarritz"
+  subtitle="Vous avez déjà essayé d'arrêter. Patchs, e-cigarette, volonté seule... et vous recommencez. Ce n'est pas un manque de caractère : c'est que la dépendance au tabac est d'abord inconsciente."
+  faq={faq}
+>
+  <h2>Pourquoi l'hypnose est si efficace contre le tabac</h2>
+  <p>Le tabagisme repose sur des automatismes profondément ancrés : des associations entre une cigarette et une émotion (le stress, le café du matin, la pause), des croyances ("je ne peux pas m'en passer"), et une dépendance comportementale qui dépasse largement la nicotine. La volonté consciente ne suffit pas à effacer ces schémas. L'hypnose, elle, accède directement à l'inconscient pour les reprogrammer.</p>
+  <p>En état hypnotique, le cerveau est particulièrement réceptif aux suggestions positives et aux nouvelles associations. C'est dans cet espace que nous transformons le rapport à la cigarette : non pas en vous forçant à résister, mais en dissolvant l'envie à sa source. Les résultats obtenus par cette méthode sont significativement supérieurs aux tentatives basées sur la seule volonté consciente.</p>
+
+  <h2>Ce qui se passe en séance</h2>
+  <p>La séance commence par un entretien approfondi : votre histoire avec le tabac, vos déclencheurs, votre motivation. Puis, en état hypnotique, nous travaillons sur les associations inconscientes liées à la cigarette et sur votre nouvelle identité de non-fumeur. L'objectif n'est pas de vous forcer à résister — c'est de transformer votre rapport à la cigarette pour que l'envie disparaisse d'elle-même.</p>
+  <p>Chaque séance est intégralement personnalisée. Un fumeur dont la cigarette est liée au stress professionnel n'a pas le même protocole que celui dont la dépendance est principalement sociale ou rituelle. Cette personnalisation est ce qui rend l'approche aussi efficace.</p>
+
+  <h2>Combien de séances ?</h2>
+  <p>La plupart des personnes arrêtent en <strong>1 à 2 séances</strong>. L'approche est calibrée à votre profil : un fumeur de 5 cigarettes par jour n'a pas le même accompagnement qu'un fumeur de 30 ans à un paquet par jour. Une séance de suivi peut être proposée si nécessaire.</p>
+
+  <h2>Questions fréquentes</h2>
+  {faq.map(item => (
+    <div>
+      <h3>{item.question}</h3>
+      <p>{item.answer}</p>
+    </div>
+  ))}
+</ServiceLayout>

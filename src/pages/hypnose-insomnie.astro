@@ -1,0 +1,49 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const faq = [
+  {
+    question: "L'hypnose fonctionne-t-elle pour l'insomnie chronique ?",
+    answer: "Oui. L'hypnose est particulièrement adaptée aux insomnies chroniques, notamment celles entretenues par l'anxiété du sommeil (la peur de ne pas dormir qui empêche de dormir). Elle agit sur le système nerveux autonome pour sortir du cycle hyperactivation-insomnie. Les résultats sont généralement visibles dès les premières séances."
+  },
+  {
+    question: "Combien de séances faut-il prévoir ?",
+    answer: "La plupart des personnes observent une amélioration significative en 3 à 5 séances. L'insomnie légère peut répondre plus rapidement ; les insomnies installées depuis plusieurs années peuvent nécessiter un accompagnement un peu plus long, combiné à des ajustements d'hygiène du sommeil."
+  },
+  {
+    question: "Puis-je combiner l'hypnose avec mes somnifères ?",
+    answer: "Oui. L'hypnose est complémentaire et non contradictoire avec un traitement médicamenteux. Une éventuelle réduction de somnifères se fait toujours progressivement et sous supervision médicale. Ne modifiez jamais votre traitement sans en parler à votre médecin."
+  },
+  {
+    question: "Vais-je apprendre à me mettre moi-même en hypnose ?",
+    answer: "Oui. L'enseignement de l'auto-hypnose est une part importante du travail. Vous repartirez avec des techniques concrètes pour induire un état de relaxation profonde au moment du coucher, gérer les réveils nocturnes, et recréer les conditions internes favorables au sommeil."
+  }
+];
+---
+
+<ServiceLayout
+  title="Hypnose Insomnie & Sommeil – Tarnos, Bayonne | Frédéric Lejeune"
+  description="Insomnies, réveils nocturnes, sommeil non réparateur… L'hypnose rééduque votre rapport au sommeil sans médicaments. Hypnothérapeute à Tarnos et Bayonne."
+  h1="Hypnose contre l'insomnie — Tarnos, Bayonne, Biarritz"
+  subtitle="Vous regardez le plafond à 3h du matin. Les médicaments vous assomment mais ne règlent rien. L'hypnose reprogramme votre rapport au sommeil."
+  faq={faq}
+>
+  <h2>Le cercle vicieux de l'insomnie et comment en sortir</h2>
+  <p>L'insomnie chronique fonctionne souvent comme un cercle vicieux : vous avez du mal à dormir, ce qui génère de l'anxiété à l'heure du coucher, ce qui active le système nerveux sympathique (alerte), ce qui empêche encore davantage de dormir. Le lit devient associé à l'éveil et à l'anxiété plutôt qu'au sommeil. Les somnifères court-circuitent le problème temporairement, mais ils n'effacent pas ce conditionnement — et souvent le renforcent par dépendance.</p>
+  <p>L'hypnose agit sur plusieurs niveaux simultanément : elle désactive la réponse d'hyperéveil qui empêche de dormir, elle dissout l'anxiété conditionnée associée au coucher, et elle réentraîne le système nerveux autonome à basculer naturellement en mode récupération. C'est un véritable réapprentissage du sommeil, pas un masquage chimique.</p>
+
+  <h2>Ce qui se passe en séance</h2>
+  <p>Nous commençons par identifier le mécanisme précis de votre insomnie : est-ce la difficulté à s'endormir ? Les réveils nocturnes ? Le réveil précoce ? L'anxiété anticipatoire ? Chaque profil a son protocole spécifique. En état hypnotique, nous travaillons sur les associations inconscientes liées au sommeil et nous ancrons de nouvelles réponses de relaxation profonde.</p>
+  <p>Une partie importante de chaque séance est consacrée à l'enseignement de techniques d'auto-hypnose que vous pourrez utiliser seul. Ces outils — inductions rapides, techniques de gestion des pensées envahissantes, ancres de relaxation — vous donnent une autonomie réelle face aux difficultés de sommeil au quotidien.</p>
+
+  <h2>Combien de séances ?</h2>
+  <p>La plupart des personnes observent une amélioration significative en <strong>3 à 5 séances</strong>. Dès les premières séances, la qualité du sommeil s'améliore et l'anxiété du coucher diminue. L'objectif est de vous rendre autonome : vous disposez des outils pour gérer votre sommeil par vous-même à long terme.</p>
+
+  <h2>Questions fréquentes</h2>
+  {faq.map(item => (
+    <div>
+      <h3>{item.question}</h3>
+      <p>{item.answer}</p>
+    </div>
+  ))}
+</ServiceLayout>

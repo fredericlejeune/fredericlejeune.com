@@ -1,0 +1,60 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SchemaFAQ from '../components/SchemaFAQ.astro';
+import site from '../data/site.json';
+
+interface FAQItem { question: string; answer: string; }
+interface Props {
+  title: string;
+  description: string;
+  h1: string;
+  subtitle: string;
+  faq?: FAQItem[];
+}
+const { title, description, h1, subtitle, faq = [] } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  {faq.length > 0 && <SchemaFAQ items={faq} />}
+
+  <!-- BREADCRUMB + HERO MINI -->
+  <section class="bg-gradient-to-br from-navy-deep to-navy py-16 px-8 lg:px-16">
+    <div class="max-w-4xl mx-auto">
+      <nav class="text-[10px] text-white/40 font-semibold uppercase tracking-widest mb-6">
+        <a href="/" class="hover:text-teal transition-colors">Accueil</a>
+        <span class="mx-2">›</span>
+        <span class="text-teal">Services</span>
+        <span class="mx-2">›</span>
+        <span class="text-white/70">{h1}</span>
+      </nav>
+      <h1 class="text-white text-4xl lg:text-5xl font-black leading-tight mb-4">{h1}</h1>
+      <p class="text-white/60 text-sm font-light leading-relaxed max-w-2xl mb-8">{subtitle}</p>
+      <a
+        href="/rendez-vous"
+        class="bg-teal text-navy-deep font-extrabold text-[11px] uppercase tracking-widest px-7 py-4 rounded-full hover:bg-teal/90 transition-colors inline-block"
+      >
+        Prendre rendez-vous →
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTENU -->
+  <article class="py-16 px-8 lg:px-16 max-w-4xl mx-auto prose prose-lg prose-headings:font-black prose-headings:text-navy-deep prose-p:text-muted prose-p:font-light prose-p:leading-relaxed">
+    <slot />
+  </article>
+
+  <!-- CTA BAS DE PAGE -->
+  <section class="bg-teal py-16 px-8 lg:px-16 text-center">
+    <h2 class="text-navy-deep text-3xl font-black mb-3">Rendez-vous découverte</h2>
+    <p class="text-navy-deep/60 text-sm font-light mb-8">L'hypnose est-elle faite pour vous ?</p>
+    <a
+      href="/rendez-vous"
+      class="bg-navy-deep text-white font-extrabold text-sm uppercase tracking-widest px-10 py-5 rounded-full hover:bg-navy transition-colors inline-block"
+    >
+      Réserver ma séance
+    </a>
+    <p class="text-navy-deep/40 text-[10px] mt-4 uppercase tracking-widest">
+      📍 {site.address.street} · {site.address.city} · {site.phoneDisplay}
+    </p>
+  </section>
+</BaseLayout>
