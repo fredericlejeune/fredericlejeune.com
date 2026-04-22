@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CalendlyEmbed from '../components/CalendlyEmbed.astro';
+import site from '../data/site.json';
+---
+
+<BaseLayout
+  title="Prendre rendez-vous – Hypnothérapeute Tarnos | Frédéric Lejeune"
+  description="Prenez rendez-vous en ligne avec Frédéric Lejeune, hypnothérapeute à Tarnos. Calendrier en temps réel. Séances à Tarnos, Bayonne et Biarritz."
+>
+  <section class="bg-gradient-to-br from-navy-deep to-navy py-16 px-8 lg:px-16">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-teal text-[10px] font-bold tracking-[3px] uppercase mb-3">Consultation</p>
+      <h1 class="text-white text-4xl font-black mb-4">Prendre rendez-vous</h1>
+      <p class="text-white/60 text-sm font-light">Choisissez directement le créneau qui vous convient</p>
+    </div>
+  </section>
+
+  <section class="py-16 px-8 lg:px-16 bg-white">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 items-start">
+      <div>
+        <h2 class="text-navy-deep text-xl font-black mb-6">Infos pratiques</h2>
+        <div class="space-y-4 text-sm text-muted font-light">
+          <div class="bg-light-bg p-4 rounded-xl">
+            <p class="font-bold text-navy-deep mb-1">📍 Adresse</p>
+            <p>{site.address.street}<br />{site.address.postalCode} {site.address.city}</p>
+          </div>
+          <div class="bg-light-bg p-4 rounded-xl">
+            <p class="font-bold text-navy-deep mb-1">📞 Téléphone</p>
+            <a href={`tel:${site.phone}`} class="text-teal font-semibold">{site.phoneDisplay}</a>
+          </div>
+          <div class="bg-light-bg p-4 rounded-xl">
+            <p class="font-bold text-navy-deep mb-1">⏱ Durée</p>
+            <p>1h à 1h30 par séance<br />Première séance souvent plus longue</p>
+          </div>
+          <div class="bg-light-bg p-4 rounded-xl">
+            <p class="font-bold text-navy-deep mb-1">💶 Tarifs</p>
+            <p>Renseignez-vous par téléphone ou lors de votre premier contact</p>
+          </div>
+        </div>
+      </div>
+      <CalendlyEmbed />
+    </div>
+  </section>
+</BaseLayout>

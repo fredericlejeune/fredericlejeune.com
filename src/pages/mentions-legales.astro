@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../data/site.json';
+---
+
+<BaseLayout
+  title="Mentions légales – Frédéric Lejeune"
+  description="Mentions légales du site fredericlejeune.com"
+  noindex={true}
+>
+  <section class="bg-navy-deep py-12 px-8">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-white text-3xl font-black">Mentions légales</h1>
+    </div>
+  </section>
+  <section class="py-16 px-8 max-w-3xl mx-auto prose prose-headings:font-black prose-headings:text-navy-deep prose-p:text-muted prose-p:font-light">
+    <h2>Éditeur du site</h2>
+    <p>Frédéric Lejeune — Hypnothérapeute<br />{site.address.street}<br />{site.address.postalCode} {site.address.city}<br />Téléphone : {site.phoneDisplay}<br />Email : {site.email}</p>
+    <h2>Hébergement</h2>
+    <p>GitHub Pages — GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis</p>
+    <h2>Propriété intellectuelle</h2>
+    <p>L'ensemble du contenu de ce site est la propriété exclusive de Frédéric Lejeune. Toute reproduction est interdite sans autorisation préalable.</p>
+    <h2>Données personnelles</h2>
+    <p>Les données collectées via le formulaire de contact sont utilisées uniquement pour répondre à vos demandes et ne sont jamais transmises à des tiers.</p>
+  </section>
+</BaseLayout>
