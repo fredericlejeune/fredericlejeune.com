@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
+import site from '../../data/site.json';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -12,9 +13,35 @@ export async function getStaticPaths() {
 
 const post = Astro.props;
 const { Content } = await render(post);
+
+const blogPostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "datePublished": post.data.pubDate,
+  "dateModified": post.data.pubDate,
+  "url": `${site.url}/blog/${post.id}`,
+  "author": {
+    "@type": "Person",
+    "name": site.name,
+    "url": site.url
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": site.name + " – Hypnothérapeute",
+    "url": site.url
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${site.url}/blog/${post.id}`
+  }
+};
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
+
   <section class="bg-gradient-to-br from-navy-deep to-navy py-16 px-8 lg:px-16">
     <div class="max-w-3xl mx-auto">
       <nav class="text-[10px] text-white/40 font-semibold uppercase tracking-widest mb-6">

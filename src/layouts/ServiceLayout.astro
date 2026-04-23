@@ -12,9 +12,20 @@ interface Props {
   faq?: FAQItem[];
 }
 const { title, description, h1, subtitle, faq = [] } = Astro.props;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": site.url },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": site.url + "/#services" },
+    { "@type": "ListItem", "position": 3, "name": h1 }
+  ]
+};
 ---
 
 <BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   {faq.length > 0 && <SchemaFAQ items={faq} />}
 
   <!-- BREADCRUMB + HERO MINI -->
