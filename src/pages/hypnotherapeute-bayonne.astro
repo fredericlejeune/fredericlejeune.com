@@ -1,14 +1,37 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import SchemaFAQ from '../components/SchemaFAQ.astro';
 import services from '../data/services.json';
 import site from '../data/site.json';
+
+const faq = [
+  {
+    question: "Frédéric Lejeune reçoit-il des patients de Bayonne ?",
+    answer: "Oui. Le cabinet est situé à Tarnos, à 5 minutes de Bayonne. Il accueille des patients de Bayonne, Anglet, Boucau et de toute l'agglomération Côte Basque Adour."
+  },
+  {
+    question: "Y a-t-il un hypnothérapeute à Bayonne intramuros ?",
+    answer: "Plusieurs praticiens exercent à Bayonne. Frédéric Lejeune est implanté à Tarnos, limitrophe de Bayonne — accessible en 5 à 10 minutes depuis le centre-ville. Pour beaucoup de patients, la proximité et la disponibilité de créneaux comptent autant que l'adresse exacte."
+  },
+  {
+    question: "Comment se passe une première séance pour un patient de Bayonne ?",
+    answer: "La première séance dure 1h30 à 2h. Elle commence par un entretien approfondi (objectif, contexte, attentes), suivi d'une première séance d'hypnose. À la fin, vous avez un plan clair pour la suite."
+  },
+  {
+    question: "Peut-on prendre rendez-vous en ligne depuis Bayonne ?",
+    answer: "Oui. Le calendrier de prise de rendez-vous est accessible 24h/24 depuis n'importe quel appareil. Choisissez le créneau qui vous convient sans avoir à téléphoner."
+  }
+];
 ---
 
 <BaseLayout
   title="Hypnothérapeute à Bayonne – Frédéric Lejeune | Cabinet Tarnos"
   description="Frédéric Lejeune, hypnothérapeute proche de Bayonne. Cabinet à Tarnos, 5 min de Bayonne. Tabac, anxiété, phobies, confiance. 140 avis 4,9/5. RDV en ligne."
 >
+  <SchemaFAQ items={faq} />
+
+  <!-- HERO -->
   <section class="bg-gradient-to-br from-navy-deep to-navy py-16 px-8 lg:px-16">
     <div class="max-w-4xl mx-auto">
       <p class="text-teal text-[10px] font-bold tracking-[3px] uppercase mb-4">Pays Basque · Bayonne</p>
@@ -16,50 +39,146 @@ import site from '../data/site.json';
         Hypnothérapeute à Bayonne
       </h1>
       <p class="text-white/60 text-sm font-light leading-relaxed max-w-2xl mb-8">
-        Le cabinet de Frédéric Lejeune est situé à Tarnos, à 5 minutes de Bayonne. Accessible depuis Bayonne en voiture ou en transport en commun. Consultations du lundi au vendredi.
+        Le cabinet de Frédéric Lejeune est situé à Tarnos, à 5 minutes de Bayonne. Accessible depuis Bayonne en voiture ou en transport en commun. Consultations du lundi au vendredi, créneaux en soirée disponibles.
       </p>
-      <a href="/rendez-vous" class="bg-teal text-navy-deep font-extrabold text-[11px] uppercase tracking-widest px-7 py-4 rounded-full inline-block hover:bg-teal/90 transition-colors">
-        Prendre rendez-vous →
-      </a>
+      <div class="flex flex-wrap gap-4">
+        <a href="/rendez-vous" class="bg-teal text-navy-deep font-extrabold text-[11px] uppercase tracking-widest px-7 py-4 rounded-full inline-block hover:bg-teal/90 transition-colors">
+          Prendre rendez-vous →
+        </a>
+        <a href={`tel:${site.phone}`} class="border border-white/30 text-white/80 font-semibold text-[11px] uppercase tracking-widest px-6 py-4 rounded-full inline-block hover:border-teal hover:text-teal transition-colors">
+          {site.phoneDisplay}
+        </a>
+      </div>
     </div>
   </section>
 
+  <!-- INFOS PRATIQUES -->
   <section class="py-16 px-8 lg:px-16 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-navy-deep text-2xl font-black mb-4">Hypnothérapie à Bayonne et alentours</h2>
+      <h2 class="text-navy-deep text-2xl font-black mb-6">Cabinet d'hypnothérapie proche de Bayonne</h2>
       <p class="text-muted text-sm font-light leading-relaxed mb-6">
-        Frédéric Lejeune accompagne les habitants de Bayonne et du Pays Basque dans leur démarche de changement. Son cabinet de Tarnos est facilement accessible depuis Bayonne, Anglet, Boucau et toute l'agglomération Côte Basque Adour.
+        Frédéric Lejeune reçoit ses patients au <strong class="text-navy-deep font-semibold">24 Boulevard Jacques Duclos à Tarnos (40220)</strong>, commune limitrophe de Bayonne au nord. Le trajet depuis le centre de Bayonne prend environ 5 à 10 minutes en voiture, avec un parking gratuit devant le cabinet. Depuis Bayonne Saint-Esprit ou la gare, le cabinet est accessible en bus (lignes ATCRB vers Tarnos).
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-muted font-light">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
         <div class="bg-light-bg p-5 rounded-xl">
-          <p class="font-bold text-navy-deep mb-1">Adresse du cabinet</p>
-          <p>{site.address.street}<br />{site.address.postalCode} {site.address.city}</p>
-          <p class="text-teal font-semibold mt-2 text-xs">→ 5 min de Bayonne</p>
+          <p class="font-bold text-navy-deep mb-1">📍 Adresse</p>
+          <p class="text-muted font-light">{site.address.street}<br />{site.address.postalCode} {site.address.city}</p>
+          <p class="text-teal font-semibold mt-2 text-xs">→ 5 min de Bayonne centre</p>
         </div>
         <div class="bg-light-bg p-5 rounded-xl">
-          <p class="font-bold text-navy-deep mb-1">Contact</p>
-          <p>{site.phoneDisplay}<br />{site.email}</p>
+          <p class="font-bold text-navy-deep mb-1">📞 Contact</p>
+          <p class="text-muted font-light mb-1">{site.phoneDisplay}</p>
+          <p class="text-muted font-light">{site.email}</p>
+        </div>
+        <div class="bg-light-bg p-5 rounded-xl">
+          <p class="font-bold text-navy-deep mb-1">🕐 Horaires</p>
+          <p class="text-muted font-light">Lundi – Vendredi<br />Créneaux en soirée disponibles</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- POURQUOI FRÉDÉRIC -->
   <section class="py-16 px-8 lg:px-16 bg-light-bg">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-navy-deep text-2xl font-black mb-10">Accompagnements proposés aux patients de Bayonne</h2>
+      <h2 class="text-navy-deep text-2xl font-black mb-6">Pourquoi choisir Frédéric Lejeune pour votre hypnothérapie près de Bayonne</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div>
+          <p class="text-muted text-sm font-light leading-relaxed mb-4">
+            Dans la zone BAB, plusieurs hypnothérapeutes exercent. Ce qui distingue Frédéric Lejeune : une triple formation complémentaire (hypnose ericksonienne, hypnose clinique, <a href="/hypnose-flash-integrative" class="text-teal hover:underline font-semibold">Hypnose Flash Intégrative®</a>), qui lui permet d'adapter précisément son approche à votre problématique plutôt que d'appliquer un protocole standard.
+          </p>
+          <p class="text-muted text-sm font-light leading-relaxed">
+            Ses <strong class="text-navy-deep font-semibold">140 avis Google notés 4,9/5</strong> témoignent d'une pratique orientée résultats. L'objectif n'est pas de multiplier les séances, mais de vous donner les outils pour avancer — le plus vite possible.
+          </p>
+        </div>
+        <div class="space-y-3">
+          {[
+            ['Tabac', 'Arrêt en 1 à 2 séances pour la majorité des fumeurs motivés'],
+            ['Anxiété & stress', 'Résultats durables là où les thérapies cognitives plafonnent'],
+            ['Phobies', 'Désensibilisation rapide, sans exposition réelle à la peur'],
+            ['Confiance en soi', 'Travail sur les croyances limitantes à la racine'],
+            ['Sommeil', 'Rééducation du rapport au sommeil sans médicaments'],
+          ].map(([titre, desc]) => (
+            <div class="flex items-start gap-3">
+              <span class="text-teal font-black text-sm mt-0.5">→</span>
+              <div>
+                <span class="text-navy-deep font-bold text-sm">{titre} — </span>
+                <span class="text-muted text-sm font-light">{desc}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 flex items-start gap-4">
+        <div class="flex-shrink-0">
+          <span class="text-yellow-400 text-xl">★★★★★</span>
+        </div>
+        <div>
+          <p class="text-navy-deep font-black text-2xl leading-none mb-1">{site.google.rating}/5</p>
+          <p class="text-muted text-xs font-light">{site.google.reviewCount} avis vérifiés Google</p>
+        </div>
+        <div class="flex-1 text-right">
+          <a href="/avis" class="text-teal text-xs font-bold uppercase tracking-widest hover:underline">Lire les témoignages →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="py-16 px-8 lg:px-16 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-navy-deep text-2xl font-black mb-3">Accompagnements proposés aux patients de Bayonne</h2>
+      <p class="text-muted text-sm font-light mb-8">Toutes les séances sont en présentiel au cabinet de Tarnos.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {services.slice(0, 6).map(s => (
+        {services.map(s => (
           <ServiceCard number={s.number} title={s.title} desc={s.shortDesc} slug={s.slug} />
         ))}
       </div>
     </div>
   </section>
 
+  <!-- ZONE DESSERVIE -->
+  <section class="py-16 px-8 lg:px-16 bg-light-bg">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-navy-deep text-2xl font-black mb-6">Zone desservie depuis Bayonne</h2>
+      <p class="text-muted text-sm font-light leading-relaxed mb-6">
+        Le cabinet de Tarnos est situé au cœur du bassin de vie BAB (Bayonne-Anglet-Biarritz). Frédéric Lejeune reçoit des patients venant de toute la région :
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {['Bayonne', 'Anglet', 'Biarritz', 'Boucau', 'Tarnos', 'Saint-Jean-de-Luz', 'Hendaye', 'Hossegor', 'Capbreton', 'Seignosse', 'Labenne', 'Ondres'].map(v => (
+          <div class="bg-white rounded-lg px-4 py-2 text-center text-sm text-navy-deep font-semibold">
+            {v}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 px-8 lg:px-16 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-navy-deep text-2xl font-black mb-8">Questions fréquentes — Bayonne</h2>
+      <div class="space-y-6">
+        {faq.map(item => (
+          <div class="border-b border-light-bg pb-6">
+            <h3 class="text-navy-deep font-bold text-base mb-2">{item.question}</h3>
+            <p class="text-muted text-sm font-light leading-relaxed">{item.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="bg-teal py-16 px-8 text-center">
     <h2 class="text-navy-deep text-3xl font-black mb-3">Rendez-vous découverte — Bayonne</h2>
     <p class="text-navy-deep/60 text-sm font-light mb-8">L'hypnose est-elle faite pour vous ?</p>
     <a href="/rendez-vous" class="bg-navy-deep text-white font-extrabold text-sm uppercase tracking-widest px-10 py-5 rounded-full inline-block hover:bg-navy transition-colors">
       Réserver ma séance
     </a>
+    <p class="text-navy-deep/40 text-[10px] mt-5 tracking-widest uppercase">
+      📍 {site.address.street} · {site.address.city} · 5 min de Bayonne
+    </p>
   </section>
 </BaseLayout>

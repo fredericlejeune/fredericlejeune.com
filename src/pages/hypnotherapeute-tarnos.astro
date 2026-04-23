@@ -1,64 +1,185 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import SchemaFAQ from '../components/SchemaFAQ.astro';
 import services from '../data/services.json';
 import site from '../data/site.json';
+
+const faq = [
+  {
+    question: "Frédéric Lejeune est-il le seul hypnothérapeute à Tarnos ?",
+    answer: "Non. Quelques praticiens exercent à Tarnos. Frédéric Lejeune se distingue par une triple formation (ericksonienne, clinique, Flash Intégrative®) et un bilan de 140 avis Google à 4,9/5. La ville reste peu couverte par rapport à Bayonne, ce qui garantit une disponibilité plus grande des créneaux."
+  },
+  {
+    question: "Combien coûte une séance à Tarnos ?",
+    answer: "Consultez la page Tarifs pour les détails. Les tarifs pratiqués à Tarnos sont comparables aux praticiens de Bayonne et Biarritz, avec une qualité de suivi différenciée par la formation complémentaire en Flash Intégrative®."
+  },
+  {
+    question: "Le cabinet à Tarnos est-il accessible depuis les Landes ?",
+    answer: "Oui. Tarnos est en Landes (40220), à la frontière avec le Pays Basque. Il reçoit des patients de Capbreton, Hossegor, Seignosse, Labenne, Ondres, Dax et toutes les communes litorales landaises."
+  },
+  {
+    question: "Y a-t-il du stationnement au cabinet de Tarnos ?",
+    answer: "Oui. Un parking gratuit est accessible directement devant le cabinet au 24 Boulevard Jacques Duclos, Tarnos."
+  }
+];
 ---
 
 <BaseLayout
-  title="Hypnothérapeute à Tarnos – Frédéric Lejeune | Cabinet 40220"
-  description="Frédéric Lejeune, hypnothérapeute à Tarnos (40220). Séances personnalisées pour le tabac, l'anxiété, les phobies. 140 avis 4,9/5. Prenez RDV en ligne."
+  title="Hypnothérapeute à Tarnos (40220) – Frédéric Lejeune | Cabinet"
+  description="Frédéric Lejeune, hypnothérapeute à Tarnos (40220). Tabac, anxiété, phobies, insomnie. Formé à l'hypnose Flash Intégrative®. 140 avis 4,9/5. RDV en ligne."
 >
+  <SchemaFAQ items={faq} />
+
+  <!-- HERO -->
   <section class="bg-gradient-to-br from-navy-deep to-navy py-16 px-8 lg:px-16">
     <div class="max-w-4xl mx-auto">
-      <p class="text-teal text-[10px] font-bold tracking-[3px] uppercase mb-4">Pays Basque · Landes</p>
+      <p class="text-teal text-[10px] font-bold tracking-[3px] uppercase mb-4">Landes · Pays Basque · 40220</p>
       <h1 class="text-white text-4xl lg:text-5xl font-black leading-tight mb-4">
         Hypnothérapeute à Tarnos (40220)
       </h1>
       <p class="text-white/60 text-sm font-light leading-relaxed max-w-2xl mb-8">
-        Cabinet situé au 24 Boulevard Jacques Duclos à Tarnos, à 5 minutes de Bayonne et Biarritz. Consultations du lundi au vendredi, créneaux le soir disponibles.
+        Cabinet au 24 Boulevard Jacques Duclos, Tarnos — à 5 minutes de Bayonne, 20 minutes de Biarritz. Parking gratuit. Consultations du lundi au vendredi, créneaux en soirée disponibles.
       </p>
-      <a href="/rendez-vous" class="bg-teal text-navy-deep font-extrabold text-[11px] uppercase tracking-widest px-7 py-4 rounded-full inline-block hover:bg-teal/90 transition-colors">
-        Prendre rendez-vous →
-      </a>
+      <div class="flex flex-wrap gap-4">
+        <a href="/rendez-vous" class="bg-teal text-navy-deep font-extrabold text-[11px] uppercase tracking-widest px-7 py-4 rounded-full inline-block hover:bg-teal/90 transition-colors">
+          Prendre rendez-vous →
+        </a>
+        <a href={`tel:${site.phone}`} class="border border-white/30 text-white/80 font-semibold text-[11px] uppercase tracking-widest px-6 py-4 rounded-full inline-block hover:border-teal hover:text-teal transition-colors">
+          {site.phoneDisplay}
+        </a>
+      </div>
     </div>
   </section>
 
+  <!-- CABINET -->
   <section class="py-16 px-8 lg:px-16 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-navy-deep text-2xl font-black mb-4">Cabinet d'hypnothérapie à Tarnos</h2>
-      <p class="text-muted text-sm font-light leading-relaxed mb-6">
-        Le cabinet de Frédéric Lejeune est situé à Tarnos, dans les Landes, à quelques minutes de Bayonne et Biarritz. Il accueille des patients de toute la région : Tarnos, Bayonne, Anglet, Biarritz, Saint-Jean-de-Luz, Hendaye, et les communes des Landes environnantes.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-muted font-light">
-        <div class="bg-light-bg p-5 rounded-xl">
-          <p class="font-bold text-navy-deep mb-1">Adresse</p>
-          <p>{site.address.street}<br />{site.address.postalCode} {site.address.city}</p>
+      <h2 class="text-navy-deep text-2xl font-black mb-6">Le cabinet d'hypnothérapie de Tarnos</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div>
+          <p class="text-muted text-sm font-light leading-relaxed mb-4">
+            Tarnos est une commune des Landes (40220) localisée à la frontière nord du Pays Basque, immédiatement à côté de Bayonne. C'est dans cette commune que Frédéric Lejeune a établi son cabinet d'hypnothérapie — un espace calme, facile d'accès, avec stationnement gratuit.
+          </p>
+          <p class="text-muted text-sm font-light leading-relaxed">
+            Le cabinet est situé au cœur de Tarnos, sur le Boulevard Jacques Duclos — un boulevard principal facilement repérable. Les patients viennent de Tarnos, de Bayonne et de l'ensemble du bassin de vie BAB (Bayonne-Anglet-Biarritz), ainsi que du littoral landais.
+          </p>
         </div>
-        <div class="bg-light-bg p-5 rounded-xl">
-          <p class="font-bold text-navy-deep mb-1">Contact</p>
-          <p>{site.phoneDisplay}<br />{site.email}</p>
+        <div class="grid grid-cols-1 gap-3">
+          <div class="bg-light-bg p-4 rounded-xl text-sm">
+            <p class="font-bold text-navy-deep mb-1">📍 Adresse exacte</p>
+            <p class="text-muted font-light">{site.address.street}<br />{site.address.postalCode} {site.address.city}</p>
+          </div>
+          <div class="bg-light-bg p-4 rounded-xl text-sm">
+            <p class="font-bold text-navy-deep mb-1">📞 Téléphone</p>
+            <a href={`tel:${site.phone}`} class="text-teal font-semibold">{site.phoneDisplay}</a>
+          </div>
+          <div class="bg-light-bg p-4 rounded-xl text-sm">
+            <p class="font-bold text-navy-deep mb-1">🕐 Horaires</p>
+            <p class="text-muted font-light">Lundi – Vendredi · Créneaux soir disponibles</p>
+          </div>
+          <div class="bg-light-bg p-4 rounded-xl text-sm">
+            <p class="font-bold text-navy-deep mb-1">🚗 Accès</p>
+            <p class="text-muted font-light">5 min Bayonne · 20 min Biarritz · Parking gratuit</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- EXPERTISE -->
   <section class="py-16 px-8 lg:px-16 bg-light-bg">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-navy-deep text-2xl font-black mb-10">Domaines d'intervention à Tarnos</h2>
+      <h2 class="text-navy-deep text-2xl font-black mb-6">Ce qui distingue ce cabinet à Tarnos</h2>
+      <p class="text-muted text-sm font-light leading-relaxed mb-8">
+        Frédéric Lejeune a construit son approche sur trois formations complémentaires, ce qui lui permet d'adapter précisément ses outils à chaque patient plutôt que d'appliquer un protocole unique à tous.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[
+          {
+            titre: "Hypnose Ericksonienne",
+            texte: "Approche douce et profonde, idéale pour les problématiques de fond : anxiété chronique, confiance en soi, changements de comportement durables."
+          },
+          {
+            titre: "Hypnose Clinique",
+            texte: "Protocoles rigoureux issus de la recherche clinique, pour les problématiques de douleur, les troubles du sommeil et les accompagnements médicaux complémentaires."
+          },
+          {
+            titre: "Flash Intégrative® (HFI)",
+            texte: "Méthode rapide et ciblée pour les phobies et les traumatismes. Rare dans la région — souvent 1 à 3 séances là où d'autres approches en demandent 10 ou 15."
+          }
+        ].map(item => (
+          <div class="bg-white rounded-2xl p-6">
+            <p class="text-navy-deep font-black text-base mb-3">{item.titre}</p>
+            <p class="text-muted text-sm font-light leading-relaxed">{item.texte}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 text-center">
+        <a href="/hypnose-flash-integrative" class="text-teal text-sm font-bold hover:underline">
+          En savoir plus sur la Flash Intégrative® →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="py-16 px-8 lg:px-16 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-navy-deep text-2xl font-black mb-3">Domaines d'intervention au cabinet de Tarnos</h2>
+      <p class="text-muted text-sm font-light mb-8">9 problématiques prises en charge en présentiel.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {services.slice(0, 6).map(s => (
+        {services.map(s => (
           <ServiceCard number={s.number} title={s.title} desc={s.shortDesc} slug={s.slug} />
         ))}
       </div>
     </div>
   </section>
 
+  <!-- RÉSULTATS -->
+  <section class="py-16 px-8 lg:px-16 bg-light-bg">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-navy-deep text-2xl font-black mb-8">Résultats à Tarnos et dans la région</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { number: site.google.rating + '★', label: 'Note Google', desc: `${site.google.reviewCount} avis vérifiés de patients de Tarnos, Bayonne et Biarritz` },
+          { number: '1–2', label: 'Séances arrêt tabac', desc: 'Résultat moyen pour les fumeurs motivés, quelle que soit l\'ancienneté de la dépendance' },
+          { number: '3', label: 'Formations certifiées', desc: 'Ericksonienne, clinique et Flash Intégrative® — une combinaison rare en Pays Basque' },
+        ].map(item => (
+          <div class="bg-white rounded-xl p-8 text-center shadow-sm">
+            <p class="text-teal text-4xl font-black mb-2">{item.number}</p>
+            <p class="text-navy-deep text-sm font-bold mb-2">{item.label}</p>
+            <p class="text-muted text-[11px] font-light leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 px-8 lg:px-16 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-navy-deep text-2xl font-black mb-8">Questions fréquentes — Tarnos</h2>
+      <div class="space-y-6">
+        {faq.map(item => (
+          <div class="border-b border-light-bg pb-6">
+            <h3 class="text-navy-deep font-bold text-base mb-2">{item.question}</h3>
+            <p class="text-muted text-sm font-light leading-relaxed">{item.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="bg-teal py-16 px-8 text-center">
     <h2 class="text-navy-deep text-3xl font-black mb-3">Rendez-vous découverte à Tarnos</h2>
     <p class="text-navy-deep/60 text-sm font-light mb-8">L'hypnose est-elle faite pour vous ?</p>
     <a href="/rendez-vous" class="bg-navy-deep text-white font-extrabold text-sm uppercase tracking-widest px-10 py-5 rounded-full inline-block hover:bg-navy transition-colors">
       Réserver ma séance
     </a>
+    <p class="text-navy-deep/40 text-[10px] mt-5 tracking-widest uppercase">
+      📍 {site.address.street} · {site.address.city} (40220) · {site.phoneDisplay}
+    </p>
   </section>
 </BaseLayout>

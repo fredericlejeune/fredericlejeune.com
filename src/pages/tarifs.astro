@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../data/site.json';
+
+const tarifs = [
+  {
+    label: "Séance individuelle",
+    duree: "1h à 1h30",
+    prix: "<!-- COMPLÉTER -->",
+    detail: "Anxiété, phobies, confiance en soi, insomnie, douleurs, peau, traumatismes. Entretien + séance d'hypnose."
+  },
+  {
+    label: "Séance arrêt du tabac",
+    duree: "1h30 à 2h",
+    prix: "<!-- COMPLÉTER -->",
+    detail: "Séance longue dédiée au sevrage tabagique. Entretien approfondi + technique flash intégrative + ancrage."
+  },
+  {
+    label: "Séance de suivi",
+    duree: "1h",
+    prix: "<!-- COMPLÉTER -->",
+    detail: "Séance de renforcement ou de suivi après un premier cycle de travail."
+  }
+];
+
+const faq = [
+  {
+    question: "Les séances sont-elles remboursées par la Sécurité sociale ?",
+    answer: "Non. L'hypnothérapie n'est pas remboursée par l'Assurance maladie. Elle relève des médecines complémentaires."
+  },
+  {
+    question: "Ma mutuelle peut-elle rembourser une partie ?",
+    answer: "Certaines mutuelles proposent un forfait annuel pour les médecines douces qui peut couvrir une partie des séances. Renseignez-vous auprès de la vôtre en demandant si l'hypnothérapie est incluse dans votre contrat."
+  },
+  {
+    question: "Une facture est-elle remise après chaque séance ?",
+    answer: "Oui. Une facture détaillée vous est remise à l'issue de chaque consultation, utilisable pour votre remboursement mutuelle."
+  },
+  {
+    question: "Combien de séances faut-il prévoir au total ?",
+    answer: "Cela dépend de la problématique. Arrêt du tabac : 1 à 2 séances. Anxiété, phobies : 3 à 5 séances. Confiance en soi, traumatismes : 5 à 8 séances. Un bilan est fait après chaque séance pour ajuster le rythme."
+  },
+  {
+    question: "Peut-on payer en plusieurs fois ?",
+    answer: "Renseignez-vous directement auprès du cabinet. Les modalités de paiement sont évoquées lors du premier contact."
+  }
+];
+---
+
+<BaseLayout
+  title="Tarifs hypnothérapeute Tarnos · Bayonne – Frédéric Lejeune"
+  description="Tarifs des séances d'hypnothérapie à Tarnos (Bayonne). Séance individuelle, arrêt du tabac, séance de suivi. Remboursement mutuelle. Infos et RDV en ligne."
+>
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-navy-deep to-navy py-16 px-8 lg:px-16">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-teal text-[10px] font-bold tracking-[3px] uppercase mb-4">Transparence</p>
+      <h1 class="text-white text-4xl lg:text-5xl font-black leading-tight mb-4">
+        Tarifs des séances d'hypnose
+      </h1>
+      <p class="text-white/60 text-sm font-light leading-relaxed max-w-2xl">
+        Des tarifs clairs, sans surprise. Chaque séance est construite sur-mesure — l'entretien préliminaire est inclus dans le temps de consultation.
+      </p>
+    </div>
+  </section>
+
+  <!-- TABLEAU TARIFS -->
+  <section class="py-20 px-8 lg:px-16 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 gap-4">
+        {tarifs.map((t) => (
+          <div class="border border-light-bg rounded-2xl p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-[1fr_160px_180px] gap-4 items-center">
+            <div>
+              <p class="text-navy-deep text-lg font-black mb-1">{t.label}</p>
+              <p class="text-muted text-sm font-light leading-relaxed">{t.detail}</p>
+            </div>
+            <div class="text-center lg:text-right">
+              <p class="text-muted text-xs font-semibold uppercase tracking-widest mb-1">Durée</p>
+              <p class="text-navy-deep font-bold text-sm">{t.duree}</p>
+            </div>
+            <div class="bg-light-bg rounded-xl px-6 py-4 text-center">
+              <p class="text-muted text-xs font-semibold uppercase tracking-widest mb-1">Tarif</p>
+              <p class="text-teal text-2xl font-black" set:html={t.prix.includes("COMPLÉTER") ? '<span class="text-sm text-muted italic">Nous contacter</span>' : t.prix} />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-8 bg-light-bg rounded-2xl p-6 text-sm text-muted font-light">
+        <p class="font-bold text-navy-deep mb-2">📋 À savoir avant de réserver</p>
+        <ul class="space-y-2 list-none">
+          <li class="flex gap-2"><span class="text-teal">→</span> Les tarifs s'entendent TTC, paiement à la séance</li>
+          <li class="flex gap-2"><span class="text-teal">→</span> Facture remise à chaque séance (pour remboursement mutuelle)</li>
+          <li class="flex gap-2"><span class="text-teal">→</span> Annulation sans frais jusqu'à 24h avant la séance</li>
+          <li class="flex gap-2"><span class="text-teal">→</span> Non remboursé Sécurité sociale — certaines mutuelles couvrent partiellement</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- REMBOURSEMENT -->
+  <section class="py-16 px-8 lg:px-16 bg-light-bg">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="text-navy-deep text-2xl font-black mb-5">Remboursement mutuelle</h2>
+        <p class="text-muted text-sm font-light leading-relaxed mb-4">
+          L'hypnothérapie n'est pas prise en charge par la Sécurité sociale. En revanche, de nombreuses mutuelles et organismes complémentaires proposent des forfaits annuels pour les médecines douces — et l'hypnothérapie y est souvent incluse.
+        </p>
+        <p class="text-muted text-sm font-light leading-relaxed mb-4">
+          Certains contrats remboursent entre 50€ et 300€ par an sur présentation d'une facture. Renseignez-vous directement auprès de votre mutuelle en demandant si votre contrat couvre les séances d'hypnothérapie.
+        </p>
+        <a href="/blog/hypnose-remboursement-mutuelle" class="text-teal text-sm font-bold hover:underline">
+          Lire notre guide complet sur le remboursement →
+        </a>
+      </div>
+      <div>
+        <h2 class="text-navy-deep text-2xl font-black mb-5">Rapport coût / bénéfice</h2>
+        <p class="text-muted text-sm font-light leading-relaxed mb-4">
+          Un fumeur d'un paquet par jour dépense plus de 3 600€ par an en cigarettes. 1 à 2 séances d'hypnose peuvent suffire à arrêter — le retour sur investissement est spectaculaire.
+        </p>
+        <p class="text-muted text-sm font-light leading-relaxed">
+          Pour l'anxiété, l'insomnie ou les phobies, les coûts indirects (arrêts maladie, médicaments, consultations répétées) dépassent souvent le coût d'un accompagnement ciblé en quelques séances.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 px-8 lg:px-16 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-navy-deep text-2xl font-black mb-10">Questions fréquentes sur les tarifs</h2>
+      <div class="space-y-6">
+        {faq.map(item => (
+          <div class="border-b border-light-bg pb-6">
+            <h3 class="text-navy-deep font-bold text-base mb-2">{item.question}</h3>
+            <p class="text-muted text-sm font-light leading-relaxed">{item.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-teal py-16 px-8 text-center">
+    <h2 class="text-navy-deep text-3xl font-black mb-3">Prendre rendez-vous</h2>
+    <p class="text-navy-deep/60 text-sm font-light mb-8">Réservez directement en ligne — sans avance de frais</p>
+    <a href="/rendez-vous" class="bg-navy-deep text-white font-extrabold text-sm uppercase tracking-widest px-10 py-5 rounded-full inline-block hover:bg-navy transition-colors">
+      Réserver ma séance →
+    </a>
+    <p class="text-navy-deep/40 text-[10px] mt-5 tracking-widest uppercase">
+      📍 {site.address.street} · {site.address.city} · {site.phoneDisplay}
+    </p>
+  </section>
+</BaseLayout>

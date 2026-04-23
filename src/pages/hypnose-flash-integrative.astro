@@ -1,0 +1,119 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+const faq = [
+  {
+    question: "Qu'est-ce que la Flash Intégrative® exactement ?",
+    answer: "L'Hypnose Flash Intégrative® (HFI) est une méthode développée par des hypnothérapeutes cliniciens français pour traiter rapidement les mémoires traumatiques et les phobies. Elle combine des éléments de l'hypnose ericksonienne, du TIPI (Technique d'Identification des Peurs Inconscientes) et d'approches corporelles. Son nom 'Flash' vient de la vitesse à laquelle les résultats peuvent être obtenus."
+  },
+  {
+    question: "En quoi est-ce différent de l'hypnose classique ?",
+    answer: "L'hypnose ericksonienne classique travaille souvent par métaphores et suggestions indirectes, en plusieurs séances. La Flash Intégrative® est plus directe et plus rapide : elle cible précisément la charge émotionnelle d'un souvenir ou d'une peur et la neutralise en une à deux séances dans la plupart des cas. Ce n'est pas mieux ou moins bien — c'est plus adapté pour certaines problématiques."
+  },
+  {
+    question: "Pour quels problèmes la Flash Intégrative® est-elle particulièrement efficace ?",
+    answer: "Elle est particulièrement indiquée pour : les phobies simples et complexes, les mémoires traumatiques (accidents, chocs, deuils), les phobies de l'avion ou du vide, les réactions de panique, les blocages émotionnels soudains. Elle est moins adaptée pour les problématiques diffuses comme l'anxiété généralisée ou les croyances limitantes profondes, où l'hypnose ericksonienne classique est préférable."
+  },
+  {
+    question: "Est-ce que ça fait revivre le trauma ?",
+    answer: "Non. La Flash Intégrative® est précisément conçue pour traiter sans re-traumatiser. Le patient n'a pas besoin de raconter en détail ce qui s'est passé. Le travail se fait sur la sensation physique et émotionnelle, pas sur le récit. Beaucoup de patients sont surpris par la douceur du processus."
+  },
+  {
+    question: "Combien de séances pour un trauma avec la méthode Flash ?",
+    answer: "1 à 3 séances pour des traumatismes simples ou des phobies isolées. Pour des traumatismes complexes ou anciens, plusieurs séances peuvent être nécessaires, parfois en alternance avec une approche ericksonienne."
+  }
+];
+---
+
+<ServiceLayout
+  title="Hypnose Flash Intégrative® – Tarnos, Bayonne | Frédéric Lejeune"
+  description="Frédéric Lejeune est certifié en Hypnose Flash Intégrative® (HFI), méthode rapide pour traiter phobies et traumatismes en 1 à 3 séances. Bayonne, Tarnos, Biarritz."
+  h1="Hypnose Flash Intégrative® — Tarnos, Bayonne, Biarritz"
+  subtitle="Une méthode de pointe pour traiter les phobies, les mémoires traumatiques et les blocages émotionnels en profondeur — souvent en 1 à 3 séances là où d'autres approches en demandent des dizaines."
+  faq={faq}
+>
+  <div class="space-y-8 text-muted font-light leading-relaxed text-sm">
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Qu'est-ce que l'Hypnose Flash Intégrative® ?</h2>
+      <p>L'Hypnose Flash Intégrative® (HFI) est une approche thérapeutique avancée qui intègre plusieurs outils issus des neurosciences et des thérapies brèves : hypnose ericksonienne, travail somatique, traitement des mémoires émotionnelles. Elle a été développée par des cliniciens français pour répondre à une réalité concrète : certaines problématiques (phobies, traumatismes, blocages émotionnels soudains) nécessitent une intervention rapide, précise et profonde.</p>
+      <p class="mt-4">Le terme "Flash" ne renvoie pas à une hypnose de spectacle ou à une technique miraculeuse — il désigne la rapidité avec laquelle la charge émotionnelle d'une mémoire ou d'une peur peut être neutralisée lorsqu'on travaille directement sur le bon niveau de traitement.</p>
+    </div>
+
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Pourquoi Frédéric Lejeune a choisi cette méthode</h2>
+      <p>Frédéric Lejeune est formé à la fois à l'hypnose ericksonienne classique, à l'hypnose clinique et à la Flash Intégrative®. Cette triple formation lui permet d'adapter son approche avec précision : certaines situations appellent la douceur et la profondeur de l'ericksonien, d'autres nécessitent la rapidité et le ciblage de la HFI.</p>
+      <p class="mt-4">Dans la zone Bayonne–Tarnos–Biarritz, très peu de praticiens sont formés à la Flash Intégrative® — ce qui en fait un outil de différenciation thérapeutique réelle, pas marketing.</p>
+    </div>
+
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Comment se déroule une séance de Flash Intégrative®</h2>
+      <p>Contrairement à certaines idées reçues, la séance commence toujours par un entretien approfondi. Il ne s'agit pas de "flasher" un traumatisme sans préparation, mais de cibler précisément ce qui doit être traité.</p>
+      <p class="mt-4"><strong class="text-navy-deep font-bold">1. L'entretien préliminaire</strong> — identifier le déclencheur, la sensation corporelle associée, l'intensité de la charge émotionnelle.</p>
+      <p class="mt-2"><strong class="text-navy-deep font-bold">2. L'état hypnotique</strong> — une induction adaptée à la problématique, souvent plus courte qu'en ericksonien classique.</p>
+      <p class="mt-2"><strong class="text-navy-deep font-bold">3. Le travail flash</strong> — on travaille sur la sensation, pas sur le récit. Pas besoin de détailler ce qui s'est passé. La charge émotionnelle se dissout progressivement.</p>
+      <p class="mt-2"><strong class="text-navy-deep font-bold">4. L'ancrage</strong> — installation d'un état de ressource stable à la place de la réponse de peur ou de sidération.</p>
+    </div>
+
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Pour quelles situations c'est le plus adapté</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 not-prose">
+        {[
+          'Phobies simples (araignées, aiguilles, sang, hauteurs)',
+          'Peur de l\'avion ou des transports',
+          'Mémoires traumatiques (accidents, agressions, chocs)',
+          'Phobies du dentiste ou médicales',
+          'Réactions de panique isolées',
+          'Blocages émotionnels soudains',
+          'Deuils non intégrés',
+          'Traumatismes liés à l\'accouchement ou aux soins',
+        ].map(item => (
+          <div class="flex items-start gap-2 bg-light-bg rounded-lg p-3">
+            <span class="text-teal mt-0.5 flex-shrink-0">→</span>
+            <span class="text-sm">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-4">Flash Intégrative® vs hypnose ericksonienne : comment choisir ?</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse not-prose">
+          <thead>
+            <tr>
+              <th class="text-left p-3 border-b-2 border-light-bg text-navy-deep font-black">Critère</th>
+              <th class="text-left p-3 border-b-2 border-light-bg text-navy-deep font-black">Flash Intégrative®</th>
+              <th class="text-left p-3 border-b-2 border-light-bg text-navy-deep font-black">Hypnose Ericksonienne</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Problématique ciblée', 'Phobies, traumatismes, blocages précis', 'Anxiété diffuse, confiance, changement de vie'],
+              ['Vitesse des résultats', '1 à 3 séances', '3 à 8 séances'],
+              ['Niveau de précision', 'Très ciblé — travail sur une mémoire ou peur', 'Plus global — travail sur des schémas profonds'],
+              ['Récit du traumatisme', 'Pas nécessaire', 'Parfois utile'],
+              ['Profondeur de l\'état hypnotique', 'Variable — parfois légère', 'Transe profonde souvent requise'],
+            ].map(([crit, hfi, erick]) => (
+              <tr class="border-b border-light-bg hover:bg-light-bg/50 transition-colors">
+                <td class="p-3 font-semibold text-navy-deep">{crit}</td>
+                <td class="p-3 text-muted">{hfi}</td>
+                <td class="p-3 text-muted">{erick}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-xs text-muted/70 italic">Lors du premier entretien, Frédéric Lejeune détermine avec vous l'approche la plus adaptée à votre situation. Les deux méthodes peuvent être combinées dans un même suivi.</p>
+    </div>
+
+    <div>
+      <h2 class="text-navy-deep text-2xl font-black mb-6">Questions fréquentes</h2>
+      {faq.map(item => (
+        <div class="mb-6">
+          <h3 class="text-navy-deep font-bold text-base mb-2">{item.question}</h3>
+          <p>{item.answer}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</ServiceLayout>

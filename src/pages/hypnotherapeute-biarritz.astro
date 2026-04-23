@@ -1,14 +1,37 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import SchemaFAQ from '../components/SchemaFAQ.astro';
 import services from '../data/services.json';
 import site from '../data/site.json';
+
+const faq = [
+  {
+    question: "Y a-t-il un hypnothérapeute à Biarritz ?",
+    answer: "Quelques praticiens exercent à Biarritz. Le cabinet de Frédéric Lejeune est situé à Tarnos, à 15 minutes de Biarritz via l'A63 ou les routes du littoral. Pour les habitants du Pays Basque, la distance reste très accessible."
+  },
+  {
+    question: "Comment venir au cabinet depuis Biarritz ?",
+    answer: "En voiture depuis Biarritz : A63 direction Bayonne, sortie Tarnos, environ 15 minutes. En transport : bus BAB direction Bayonne puis Tarnos. Parking gratuit sur place."
+  },
+  {
+    question: "Frédéric Lejeune propose-t-il des séances en visioconférence pour les patients de Biarritz ?",
+    answer: "Les séances se déroulent en présentiel au cabinet de Tarnos. L'état hypnotique fonctionne mieux en présence physique, et la prise en charge est plus précise. Le déplacement de 15 minutes depuis Biarritz est largement compensé par la qualité du suivi."
+  },
+  {
+    question: "Quelle est la spécialité qui convient le mieux aux habitants de Biarritz ?",
+    answer: "Les demandes les plus fréquentes à Biarritz et dans le Pays Basque concernent l'arrêt du tabac, la gestion de l'anxiété et la confiance en soi. Mais chaque problématique est prise en charge : phobies, sommeil, douleurs chroniques, traumatismes."
+  }
+];
 ---
 
 <BaseLayout
-  title="Hypnothérapeute à Biarritz – Frédéric Lejeune | Cabinet Tarnos"
-  description="Frédéric Lejeune, hypnothérapeute proche de Biarritz. Cabinet à Tarnos, accessible depuis Biarritz. Tabac, anxiété, phobies, sommeil. 140 avis 4,9/5. RDV en ligne."
+  title="Hypnothérapeute à Biarritz – Frédéric Lejeune | Cabinet Tarnos (15 min)"
+  description="Hypnothérapeute proche de Biarritz. Cabinet à Tarnos, 15 min de Biarritz. Tabac, anxiété, phobies, confiance en soi. Frédéric Lejeune. 140 avis 4,9/5. RDV en ligne."
 >
+  <SchemaFAQ items={faq} />
+
+  <!-- HERO -->
   <section class="bg-gradient-to-br from-navy-deep to-navy py-16 px-8 lg:px-16">
     <div class="max-w-4xl mx-auto">
       <p class="text-teal text-[10px] font-bold tracking-[3px] uppercase mb-4">Pays Basque · Biarritz</p>
@@ -16,50 +39,141 @@ import site from '../data/site.json';
         Hypnothérapeute à Biarritz
       </h1>
       <p class="text-white/60 text-sm font-light leading-relaxed max-w-2xl mb-8">
-        Le cabinet de Frédéric Lejeune est situé à Tarnos, à 15 minutes de Biarritz. Accessible depuis Biarritz, Anglet et tout le Pays Basque. Consultations du lundi au vendredi.
+        Le cabinet de Frédéric Lejeune est situé à Tarnos, à 15 minutes de Biarritz par l'A63. Parking gratuit sur place. Consultations du lundi au vendredi, créneaux en soirée disponibles.
       </p>
-      <a href="/rendez-vous" class="bg-teal text-navy-deep font-extrabold text-[11px] uppercase tracking-widest px-7 py-4 rounded-full inline-block hover:bg-teal/90 transition-colors">
-        Prendre rendez-vous →
-      </a>
+      <div class="flex flex-wrap gap-4">
+        <a href="/rendez-vous" class="bg-teal text-navy-deep font-extrabold text-[11px] uppercase tracking-widest px-7 py-4 rounded-full inline-block hover:bg-teal/90 transition-colors">
+          Prendre rendez-vous →
+        </a>
+        <a href={`tel:${site.phone}`} class="border border-white/30 text-white/80 font-semibold text-[11px] uppercase tracking-widest px-6 py-4 rounded-full inline-block hover:border-teal hover:text-teal transition-colors">
+          {site.phoneDisplay}
+        </a>
+      </div>
     </div>
   </section>
 
+  <!-- INFOS PRATIQUES -->
   <section class="py-16 px-8 lg:px-16 bg-white">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-navy-deep text-2xl font-black mb-4">Hypnothérapie à Biarritz et Pays Basque</h2>
+      <h2 class="text-navy-deep text-2xl font-black mb-6">Un cabinet accessible depuis Biarritz</h2>
       <p class="text-muted text-sm font-light leading-relaxed mb-6">
-        Frédéric Lejeune reçoit des patients de Biarritz, Anglet, Bayonne et de tout le Pays Basque. Son cabinet de Tarnos est facilement accessible depuis Biarritz par l'A63 ou par les routes départementales du littoral.
+        Biarritz, ville touristique et résidentielle du Pays Basque, ne compte que quelques hypnothérapeutes en cabinet fixe. Frédéric Lejeune exerce à Tarnos — à <strong class="text-navy-deep font-semibold">15 minutes de Biarritz</strong> via l'A63 ou les routes du littoral. Pour la plupart des patients, ce déplacement se fait naturellement dans le contexte d'un rendez-vous planifié.
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-muted font-light">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
         <div class="bg-light-bg p-5 rounded-xl">
-          <p class="font-bold text-navy-deep mb-1">Adresse du cabinet</p>
-          <p>{site.address.street}<br />{site.address.postalCode} {site.address.city}</p>
+          <p class="font-bold text-navy-deep mb-1">📍 Adresse</p>
+          <p class="text-muted font-light">{site.address.street}<br />{site.address.postalCode} {site.address.city}</p>
           <p class="text-teal font-semibold mt-2 text-xs">→ 15 min de Biarritz</p>
         </div>
         <div class="bg-light-bg p-5 rounded-xl">
-          <p class="font-bold text-navy-deep mb-1">Contact</p>
-          <p>{site.phoneDisplay}<br />{site.email}</p>
+          <p class="font-bold text-navy-deep mb-1">📞 Contact</p>
+          <p class="text-muted font-light mb-1">{site.phoneDisplay}</p>
+          <p class="text-muted font-light">{site.email}</p>
+        </div>
+        <div class="bg-light-bg p-5 rounded-xl">
+          <p class="font-bold text-navy-deep mb-1">🚗 Accès</p>
+          <p class="text-muted font-light">A63 sortie Tarnos<br />Parking gratuit sur place</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- APPROCHE -->
   <section class="py-16 px-8 lg:px-16 bg-light-bg">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-navy-deep text-2xl font-black mb-10">Accompagnements proposés aux patients de Biarritz</h2>
+      <h2 class="text-navy-deep text-2xl font-black mb-6">Une approche qui va plus loin que l'hypnose classique</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
+          <p class="text-muted text-sm font-light leading-relaxed mb-4">
+            Frédéric Lejeune est l'un des rares praticiens de la région à maîtriser à la fois l'hypnose ericksonienne, l'hypnose clinique et l'<a href="/hypnose-flash-integrative" class="text-teal hover:underline font-semibold">Hypnose Flash Intégrative®</a>. Cette dernière méthode — rare dans la zone Biarritz-Bayonne — permet de traiter les phobies et les traumatismes en 1 à 3 séances là où les approches classiques en demandent parfois 10 ou 15.
+          </p>
+          <p class="text-muted text-sm font-light leading-relaxed">
+            Pour les patients de Biarritz qui se déplacent spécialement, cette efficacité a un sens concret : moins de consultations, des résultats durables, et un investissement temps réduit.
+          </p>
+        </div>
+        <div>
+          <div class="bg-white rounded-2xl p-6 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="text-teal text-3xl font-black">4,9★</span>
+              <div>
+                <p class="text-navy-deep font-bold text-sm">Note Google</p>
+                <p class="text-muted text-xs font-light">{site.google.reviewCount} avis vérifiés</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-teal text-3xl font-black">1–2</span>
+              <div>
+                <p class="text-navy-deep font-bold text-sm">Séances en moyenne</p>
+                <p class="text-muted text-xs font-light">Pour l'arrêt du tabac</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-teal text-3xl font-black">3</span>
+              <div>
+                <p class="text-navy-deep font-bold text-sm">Approches complémentaires</p>
+                <p class="text-muted text-xs font-light">Ericksonienne, clinique, Flash Intégrative®</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="py-16 px-8 lg:px-16 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-navy-deep text-2xl font-black mb-3">Accompagnements proposés aux patients de Biarritz</h2>
+      <p class="text-muted text-sm font-light mb-8">Toutes les séances ont lieu en présentiel au cabinet de Tarnos (40220).</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {services.slice(0, 6).map(s => (
+        {services.map(s => (
           <ServiceCard number={s.number} title={s.title} desc={s.shortDesc} slug={s.slug} />
         ))}
       </div>
     </div>
   </section>
 
+  <!-- ZONE DESSERVIE -->
+  <section class="py-16 px-8 lg:px-16 bg-light-bg">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-navy-deep text-2xl font-black mb-6">Patients reçus depuis le Pays Basque</h2>
+      <p class="text-muted text-sm font-light leading-relaxed mb-6">
+        Le cabinet est idéalement situé pour desservir l'ensemble du Pays Basque et le littoral landais :
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {['Biarritz', 'Anglet', 'Bayonne', 'Tarnos', 'Bidart', 'Guéthary', 'Saint-Jean-de-Luz', 'Ciboure', 'Hendaye', 'Hossegor', 'Capbreton', 'Ondres'].map(v => (
+          <div class="bg-white rounded-lg px-4 py-2 text-center text-sm text-navy-deep font-semibold">
+            {v}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 px-8 lg:px-16 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-navy-deep text-2xl font-black mb-8">Questions fréquentes — Biarritz</h2>
+      <div class="space-y-6">
+        {faq.map(item => (
+          <div class="border-b border-light-bg pb-6">
+            <h3 class="text-navy-deep font-bold text-base mb-2">{item.question}</h3>
+            <p class="text-muted text-sm font-light leading-relaxed">{item.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="bg-teal py-16 px-8 text-center">
     <h2 class="text-navy-deep text-3xl font-black mb-3">Rendez-vous découverte — Biarritz</h2>
     <p class="text-navy-deep/60 text-sm font-light mb-8">L'hypnose est-elle faite pour vous ?</p>
     <a href="/rendez-vous" class="bg-navy-deep text-white font-extrabold text-sm uppercase tracking-widest px-10 py-5 rounded-full inline-block hover:bg-navy transition-colors">
       Réserver ma séance
     </a>
+    <p class="text-navy-deep/40 text-[10px] mt-5 tracking-widest uppercase">
+      📍 {site.address.street} · {site.address.city} · 15 min de Biarritz
+    </p>
   </section>
 </BaseLayout>
