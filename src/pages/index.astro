@@ -1,13 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
-import ReviewCard from '../components/ReviewCard.astro';
+import GoogleReviewsWidget from '../components/GoogleReviewsWidget.astro';
 import site from '../data/site.json';
 import services from '../data/services.json';
-import reviews from '../data/reviews.json';
 
 const homepageServices = services.slice(0, 6);
-const homepageReviews = reviews.slice(0, 3);
 ---
 
 <BaseLayout>
@@ -119,24 +117,20 @@ const homepageReviews = reviews.slice(0, 3);
   </section>
 
   <!-- AVIS -->
-  <section class="py-20 px-8 lg:px-16 bg-white text-center">
-    <p class="text-teal text-[10px] font-bold tracking-[3px] uppercase mb-3">Témoignages</p>
-    <h2 class="text-navy-deep text-3xl font-black mb-10">Ils ont franchi le pas</h2>
-    <div class="flex items-center justify-center gap-6 mb-10">
-      <span class="text-navy-deep text-6xl font-black leading-none">{site.google.rating}</span>
-      <div class="text-left">
-        <p class="text-yellow-400 text-xl mb-1">★★★★★</p>
-        <p class="text-muted text-xs">{site.google.reviewCount} avis · Google</p>
-      </div>
+  <section class="bg-white">
+    <div class="pt-16 px-8 lg:px-16 text-center">
+      <p class="text-teal text-[10px] font-bold tracking-[3px] uppercase mb-3">Témoignages</p>
+      <h2 class="text-navy-deep text-3xl font-black">Ils ont franchi le pas</h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-      {homepageReviews.map(r => (
-        <ReviewCard author={r.author} location={r.location} text={r.text} rating={r.rating} />
-      ))}
+    <GoogleReviewsWidget
+      showCount={3}
+      googleProfileUrl="https://share.google/xezwldgqIsJHQcyxm"
+    />
+    <div class="pb-4 text-center -mt-6">
+      <a href="/avis" class="inline-block text-teal text-[11px] font-bold uppercase tracking-widest hover:underline">
+        Voir tous les témoignages →
+      </a>
     </div>
-    <a href="/avis" class="inline-block mt-8 text-teal text-[11px] font-bold uppercase tracking-widest hover:underline">
-      Voir tous les témoignages →
-    </a>
   </section>
 
   <!-- CTA FINAL -->

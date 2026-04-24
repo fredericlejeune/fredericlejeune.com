@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ReviewCard from '../components/ReviewCard.astro';
-import reviews from '../data/reviews.json';
+import GoogleReviewsWidget from '../components/GoogleReviewsWidget.astro';
 import site from '../data/site.json';
 ---
 
@@ -9,37 +8,22 @@ import site from '../data/site.json';
   title="Avis clients – Frédéric Lejeune, Hypnothérapeute Tarnos"
   description={`${site.google.reviewCount} avis vérifiés, note ${site.google.rating}/5 sur Google. Découvrez les témoignages des patients de Frédéric Lejeune, hypnothérapeute à Tarnos.`}
 >
+  <!-- HERO -->
   <section class="bg-gradient-to-br from-navy-deep to-navy py-16 px-8 lg:px-16 text-center">
     <p class="text-teal text-[10px] font-bold tracking-[3px] uppercase mb-3">Témoignages</p>
     <h1 class="text-white text-4xl font-black mb-6">Ils ont franchi le pas</h1>
-    <div class="flex items-center justify-center gap-6">
-      <span class="text-white text-6xl font-black">{site.google.rating}</span>
-      <div class="text-left">
-        <p class="text-yellow-400 text-2xl">★★★★★</p>
-        <p class="text-white/50 text-sm">{site.google.reviewCount} avis · Google</p>
-      </div>
-    </div>
+    <p class="text-white/50 text-sm font-light max-w-xl mx-auto">
+      {site.google.reviewCount} patients ont partagé leur expérience sur Google.
+      Voici ce qu'ils disent.
+    </p>
   </section>
 
-  <section class="py-16 px-8 lg:px-16 bg-white">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {reviews.map(r => (
-        <ReviewCard author={r.author} location={r.location} text={r.text} rating={r.rating} />
-      ))}
-    </div>
-    <div class="max-w-5xl mx-auto mt-10 text-center">
-      <p class="text-muted text-sm font-light">Retrouvez tous les avis vérifiés sur</p>
-      <a
-        href="https://g.co/kgs/fredericlejeune"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-teal font-bold text-sm hover:underline"
-      >
-        Google Maps →
-      </a>
-    </div>
-  </section>
+  <!-- WIDGET GOOGLE REVIEWS -->
+  <GoogleReviewsWidget
+    googleProfileUrl="https://share.google/xezwldgqIsJHQcyxm"
+  />
 
+  <!-- CTA -->
   <section class="bg-teal py-16 px-8 text-center">
     <h2 class="text-navy-deep text-3xl font-black mb-3">Rendez-vous découverte</h2>
     <p class="text-navy-deep/60 text-sm font-light mb-8">L'hypnose est-elle faite pour vous ?</p>
